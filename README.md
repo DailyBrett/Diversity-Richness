@@ -10,16 +10,16 @@ This is a dataset collected by the US Census Bureau for the ACS 2021 (Five Year 
 ## File Tree
 repository-Diversity-Richness
 ├── Datasets
-│   ├── file1-1.txt
-│   └── file1-2.txt
+  ├── file1-1.txt
+  └── file1-2.txt
 ├── Analysis
-│   ├── file2-1.txt
-│   └── file2-2.txt
+  ├── file2-1.txt
+  └── file2-2.txt
 ├── Assignments
-│   ├── file1-1.txt
-│   └── file1-2.txt
+  ├── file1-1.txt
+  └── file1-2.txt
 ├── In Progress
-│   ├── file2-1.txt
-│   └── file2-2.txt
+  ├── file2-1.txt
+  └── file2-2.txt
 ├── gitignore
 └── README.md
