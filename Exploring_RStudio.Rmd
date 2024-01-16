@@ -92,14 +92,14 @@ helloworld(name, title, month_num) #sample function
 
 **Experiment Approaches**
 1. *Experiment*
-  1. 250 particapnts 
-  2. race of friend network
+  1.1 250 particapnts 
+  1.2 race of friend network
 2. *City Analysis*
-  1. 50 cities
-  2. psych richness survey
+  2.1 50 cities
+  2.2 psych richness survey
 3. *Proxy Data*
-  1. World Values Survey
-  2. 10 years 
+  3.1 World Values Survey
+  3.2 10 years 
 
 [Link to Social Explorer](https://www.socialexplorer.com/explore-maps)
 <!-- This is the link for the Census Burea Data -->
