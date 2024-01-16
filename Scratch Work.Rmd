@@ -1,0 +1,122 @@
+---
+title: "Scratch Work"
+output: html_document
+date: "2024-01-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+helloworld <- function(name, title, month_num, military_time) { #set the three inputs
+  formality <- if (title == TRUE) {formality <- "Greetings "
+  } else {formality <- "Hey "} #a funtion that changes formality of greeting based on if there is a title
+  # Initialize season
+  if (month_num %in% c(1, 2, 12)) {season <- "Winter"} #Output winter
+  else if (month_num %in% 3:5) {season <- "Spring"} #Output spring
+  else if (month_num %in% 6:8) {season <- "Summer"} #Output summer
+  else if (month_num %in% 9:11) {season <- "Fall"} #Output fall
+  paste0(formality, name, ", how are you? ", "I hope you are having a lovely ", season, "! ", added_greeting)
+  #fill in the name and put pieces together
+}
+```
+
+
+
+
+```{r cars}
+greeting <- function(name) {
+  paste("Hello ", name, "!")
+}
+
+helloworld <- function(name, title, month_num) {
+  formality <- if (title == TRUE) {formality <- "Greetings "
+  } else {formality <- "Hey "} 
+     if (month_num == 1:2) {season <-"Winter"}
+     else if (month_num == 12) {season <- "Winter"}
+     else if (month_num == 3:5) {season <- "Spring"}
+     else if (month_num == 6:8) {season <- "Summer"}
+     else if (month_num == 9:11) {season <- "Fall"}
+   }
+  paste0(formality, name, ", how are you? ", "I hope you are having a lovely ", season)
+}
+
+name <- "Dowling"
+title <- TRUE
+month_num <- 12
+helloworld(name, title, month_num)
+
+```
+
+
+```{r}
+helloworld <- function(name, title, month_num) { #set the three inputs
+  formality <- if (title == TRUE) {formality <- "Greetings "
+  } else {formality <- "Hey "} #a funtion that changes formality of greeting based on if there is a title
+  if (month_num == 1:2) {season <- "Winter"}
+     else if (month_num == 12) {season <- "Winter"}
+     else if (month_num == 3:5) {season <- "Spring"}
+     else if (month_num == 6:8) {season <- "Summer"}
+     else if (month_num == 9:11) {season <- "Fall"}
+  paste0(formality, name, ", how are you? ", "I hope you are having a lovely ", season, "!")
+}
+  #fill in the name and put pieces together
+  
+  #practice using the helloworld function
+name <- "Dr. Dowling" #sample name
+title <- TRUE #sample title
+month_num <- 12 #sample month
+helloworld(name, title, month_num) #sample function
+}
+
+```
+
+```{r}
+helloworld <- function(name, title, month_num) {
+  # Initialize formality
+  formality <- if (title) {
+    "Greetings "
+  } else {
+    "Hey "
+  }
+  
+  # Initialize season
+  if (month_num %in% c(1, 2, 12)) {
+    season <- "Winter"
+  } else if (month_num %in% 3:5) {
+    season <- "Spring"
+  } else if (month_num %in% 6:8) {
+    season <- "Summer"
+  } else if (month_num %in% 9:11) {
+    season <- "Fall"
+  }
+  
+  paste0(formality, name, ", how are you? ", "I hope you are having a lovely ", season, "!")
+}
+
+name <- "Dr. Dowling" #sample name
+title <- TRUE #sample title
+month_num <- 12 #sample month
+helloworld(name, title, month_num) #sample function
+
+
+```
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

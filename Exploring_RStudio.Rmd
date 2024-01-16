@@ -52,11 +52,60 @@ classoption       : "man"
 output            : papaja::apa6_pdf
 ---
 
+# 1. Loading Functions and scripts
+<!-- This is the first of the three headers. -->
+
 ```{r}
-source("~/repos/Initial_Script.R") #accessing script
+source("~/repos/Diversity-Richness/Initial_Script.R") #accessing script
+
 ```
 
+```{r}
+source("~/repos/Diversity-Richness/Function_scripts.R")
+# load newscript that includes scripts for helloworld
+```
 
+```{r}
+#practice using the helloworld function
+name <- "Dr. Dowling" #sample name
+title <- TRUE #sample title
+month_num <- 3 #sample month
+military_time <- 15
+helloworld(name, title, month_num) #sample function
+
+```
+
+# 2. Research Analysis
+
+<!-- These are the two lists. -->
+
+**Potenial Locations**
+- *City Level data*
+  - Chicago 
+  - Dallas
+- *County Level Data*
+  - Cook
+  -Dallas
+- *Zip Code Level Data*
+  - 60637
+  - 76116 
+
+**Experiment Approaches**
+1. *Experiment*
+  1. 250 particapnts 
+  2. race of friend network
+2. *City Analysis*
+  1. 50 cities
+  2. psych richness survey
+3. *Proxy Data*
+  1. World Values Survey
+  2. 10 years 
+
+[Link to Social Explorer](https://www.socialexplorer.com/explore-maps)
+<!-- This is the link for the Census Burea Data -->
+
+
+# 3. Preloaded Info
 
 ```{r setup, include = FALSE}
 library("papaja")
@@ -70,6 +119,28 @@ r_refs("r-references.bib")
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
+
+
+```{r}
+
+
+helloworld <- function(name, title, month_num) {
+  formality <- if (title == TRUE) {formality <- "Greetings "
+  } else {formality <- "Hey "}
+  for (month_num in 1:2) {season <- "Winter"}
+  for (month_num in 12) {season <- "Winter"}
+  for (month_num in 3:5) {season <- "Spring"}
+  for (month_num in 6:8) {season <- "Summer"}
+  for (month_num in 9:11) {season <- "Fall"}
+  paste0(formality, name, ", how are you? ", "I hope you are having a lovely ", season, "!")
+}
+
+
+
+```
+
+
+
 
 
 
