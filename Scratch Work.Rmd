@@ -111,6 +111,19 @@ helloworld(name, title, month_num) #sample function
 
 
 
+```{r}
+
+install.packages("readxl")
+library("readxl")
+
+read_excel("~/Desktop/MM Data.xlsx", skip = 1)
+write.csv("~/Desktop/MM Data.xlsx", file = "MM_Data.csv")
+
+
+```
+
+
+
 ## Including Plots
 
 You can also embed plots, for example:

@@ -141,9 +141,6 @@ helloworld <- function(name, title, month_num) {
 
 
 
-
-
-
 # Methods
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
