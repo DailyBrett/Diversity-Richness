@@ -1,3 +1,19 @@
+# The following are all my added commands
+
+/localonly/
+# include a dedicated directory called localonly
+
+*.bib
+# ignore .bib type files
+
+/Editting Data.Rmd
+# specifcally ignore the Editting Data.Rmd file
+
+
+
+# The Following are the Original Commands
+
+
 # History files
 .Rhistory
 .Rapp.history
