@@ -75,6 +75,34 @@ helloworld(name, title, month_num) #sample function
 
 ```
 
+```{r Read-in Basic Census Data}
+library(readr)
+reloading_censusdata <- "~/Desktop/CensusData/Census_Citydata_nolables.csv" #making a pathway to the downloaded census data
+downloaded_censusdata <- read.csv(reloading_censusdata) #loading the census data with readr
+View(downloaded_censusdata)
+# This data is mostly in a tidy format. Each column is a single variable (although total pop is repeated several times) and each row is a single observation. Each cell is mostly a single measurement, but many are left blank including whole rows. 
+# The data has issues: 1) whole rows left blank 2) repeated columns 3) difficult to use column names
+
+```
+
+```{r Editting Data with dyplr}
+library(dplyr)
+updated_census_data <- select(downloaded_censusdata, 2, 52, 60:137) #remove unneccesary coumns
+updated_census_data2 <- rename(updated_census_data, "Qualifying_Name" = 1, "Area_Name" = 2, "Total_Population" = 3, "Total_Population_Male" = 4, "Total_Population_Female" = 5, "X_Total_Population_Male" =6, "X_Total_Population_Female" = 7, "Total_Population2" = 8, "Total_Population_Under_5_Years" = 9, "Total_Population_5_to_9_Years" = 10, "Total_Population_10_to_14_Years" = 11, "Total_Population_15_to_17_Years" = 12, "Total_Population_18_to_24_Years" = 13, "Total_Population_25_to_34_Years" = 14, "Total_Population_35_to_44_Years" = 15, "Total_Population_45_to_54_Years" = 16, "Total_Population_55_to_64_Years" = 17, "Total_Population_65_to_74_Years" = 18, "Total_Population_75_to_84_Years" = 19, "Total_Population_85_Years_And_Over" = 20,"X_Total_Population_Under_5_Years" = 21, "X_Total_Population_5_to_9_Years" = 22, "X_Total_Population_10_to_14_Years" = 23, "X_Total_Population_15_to_17_Years" = 24, "X_Total_Population_18_to_24_Years" = 25, "X_Total_Population_25_to_34_Years" = 26, "X_Total_Population_35_to_44_Years" = 27, "X_Total_Population_45_to_54_Years" = 28, "X_Total_Population_55_to_64_Years" = 29, "X_Total_Population_65_to_74_Years" = 30, "X_Total_Population_75_to_84_Years" = 31, "X_Total_Population_85_Years_And_Over" = 32, "Total_Population3" = 33, "Total_Population_White_Alone" = 34, "Total_Population_Black_or African_American_Alone" = 35, "Total_Population_American_Indian_And_Native_Alaskan_Alone" = 36, "Total_Population_Asian_Alone" = 37, "Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone" = 38, "Total_Population_Some_Other_Race_Alone" = 39,"Total_Population_Two_Or_More_Races" = 40,"X_Total_Population_White_Alone" =41, "X_Total_Population_Black_or African_American_Alone" = 42, "X_Total_Population_American_Indian_And_Native_Alaskan_Alone" = 43, "X_Total_Population_Asian_Alone" = 44, "X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone" = 45, "X_Total_Population_Some_Other_Race_Alone" = 46,"X_Total_Population_Two_Or_More_Races" = 47,"Households" = 48,"Households_Family_Households" = 49,"Households_Married_Couple_Family" = 50,"Households_Other_Family" = 51,"Households_Male_Householder_No_Wife_Present" = 52,"Households_Female_Householder_No_Husband_Present" = 53,"Households_Nonfamily_Households" = 54,"Nonfamily_Households_Male_Householder" = 55,"Nonfamily_Households_Female_Householder" = 56,"X_Households_Family_Households" = 57,"X_Households_Married_Couple_Family" = 58,"X_Households_Other_Family" = 59,"X_Households_Male_Householder_No_Wife_Present" = 60,"X_Households_Female_Householder_No_Husband_Present" = 61,"X_Households_Nonfamily_Households" = 62,"X_Nonfamily_Households_Male_Householder" = 63,"X_Nonfamily_Households_Female_Householder" = 64,"Median_Household_Income" = 65,"Housing_Units" = 66,"Occupied_Housing_Units" = 67,"Owner_Occupied" = 68,"Renter_Occupied" = 69,"X_Owner_Occupied" = 70,"X_Renter_Occupied" = 71,"Population_With_Poverty_Status" = 72,"Poverty_Status_Under_1.00" = 73,"Poverty_Status_1.00_to_1.99" = 74,"Poverty_Status_Under_2.00" = 75,"Poverty_Status_2.00_and_Over" = 76,"X_Poverty_Status_Under_1.00" = 77,"X_Poverty_Status_1.00_to_1.99" = 78,"X_Poverty_Status_Under_2.00" = 79,"X_Poverty_Status_2.00_and_Over" = 80)
+#renaming old columns
+OnlyLarge_City_Data <- filter(updated_census_data2, Total_Population >= 50000)
+#limiting the data to only include cities over 50000 population
+```
+
+```{r Read-out new Large City Data Set}
+write.csv(OnlyLarge_City_Data, file = "~/repos/Diversity-Richness/City_Census_Over50000", row.names = FALSE)
+#make a new csv file to include only the larger cities
+
+
+```
+
+
+
 # 2. Research Analysis
 
 <!-- These are the two lists. -->
