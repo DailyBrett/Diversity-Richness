@@ -56,12 +56,12 @@ output            : papaja::apa6_pdf
 <!-- This is the first of the three headers. -->
 
 ```{r}
-source("~/repos/Diversity-Richness/Initial_Script.R") #accessing script
+source("~/repos/Diversity-Richness/Assignments/Initial_Script.R") #accessing script
 
 ```
 
 ```{r}
-source("~/repos/Diversity-Richness/Function_scripts.R")
+source("~/repos/Diversity-Richness/Assignments/Function_scripts.R")
 # load newscript that includes scripts for helloworld
 ```
 
@@ -95,14 +95,14 @@ OnlyLarge_City_Data <- filter(updated_census_data2, Total_Population >= 50000)
 ```
 
 ```{r Read-out new Large City Data Set}
-write.csv(OnlyLarge_City_Data, file = "~/repos/Diversity-Richness/City_Census_Over50000", row.names = FALSE)
+write.csv(OnlyLarge_City_Data, file = "~/repos/Diversity-Richness/Datasets/City_Census_Over50000", row.names = FALSE)
 #make a new csv file to include only the larger cities
 
 ```
 
 ```{r}
 library(writexl)
-write_xlsx(updated_census_data2, "~/repos/Diversity-Richness/City_Census_data_excel")
+write_xlsx(updated_census_data2, "~/repos/Diversity-Richness/Datasets/City_Census_data_excel")
 ```
 
 
