@@ -1,0 +1,82 @@
+"first_name","last_name","initials","height_in","height_cm","mass","hair","gender","species","homeworld","brown_hair"
+"Mas","Amedda","MA",77.1654,196,NA,"none","m","CHAGRIAN","Champala",FALSE
+"Padmé","Amidala","PA",72.8347,185,45,"brown","f","HUMAN","Naboo",TRUE
+"Raymus","Antilles","RA",74.0158,188,79,"brown","m","HUMAN","Alderaan",TRUE
+"Wedge","Antilles","WA",66.9292,170,77,"brown","m","HUMAN","Corellia",TRUE
+"Dud","Bolt","DB",37.0079,94,45,"none","m","VULPTEREEN","Vulpter",FALSE
+"Lando","Calrissian","LC",69.6851,177,79,"black","m","HUMAN","Socorro",FALSE
+"Biggs","Darklighter","BD",72.0473,183,84,"black","m","HUMAN","Tatooine",FALSE
+"Jabba","Desilijic Tiure","JD",68.8977,175,1358,NA,"m","HUTT","Nal Hutta",NA
+"Boba","Fett","BF",72.0473,183,78.2,"black","m","HUMAN","Kamino",FALSE
+"Jango","Fett","JF",72.0473,183,79,"black","m","HUMAN","Concord Dawn",FALSE
+"Kit","Fisto","KF",77.1654,196,87,"none","m","NAUTOLAN","Glee Anselm",FALSE
+"Bib","Fortuna","BF",70.8662,180,NA,"none","m","TWI'LEK","Ryloth",FALSE
+"Adi","Gallia","AG",72.441,184,50,"none","f","THOLOTHIAN","Coruscant",FALSE
+"Nute","Gunray","NG",75.1969,191,90,"none","m","NEIMODIAN","Cato Neimoidia",FALSE
+"San","Hill","SH",75.1969,191,NA,"none","m","MUUN","Muunilinst",FALSE
+"Jar","Jar Binks","JJ",77.1654,196,66,"none","m","GUNGAN","Naboo",FALSE
+"Dexter","Jettster","DJ",77.9528,198,102,"none","m","BESALISK","Ojom",FALSE
+"Qui-Gon","Jinn","QJ",75.9843,193,89,"brown","m","HUMAN",NA,TRUE
+"Obi-Wan","Kenobi","OK",71.6536,182,77,"auburn, white","m","HUMAN","Stewjon",FALSE
+"Plo","Koon","PK",74.0158,188,80,"none","m","KEL DOR","Dorin",FALSE
+"Eeth","Koth","EK",67.3229,171,NA,"black","m","ZABRAK","Iridonia",FALSE
+"Cliegg","Lars","CL",72.0473,183,NA,"brown","m","HUMAN","Tatooine",TRUE
+"Owen","Lars","OL",70.0788,178,120,"brown, grey","m","HUMAN","Tatooine",FALSE
+"Darth","Maul","DM",68.8977,175,80,"none","m","ZABRAK","Dathomir",FALSE
+"Tion","Medon","TM",81.1024,206,80,"none","m","PAU'AN","Utapau",FALSE
+"Sly","Moore","SM",70.0788,178,48,"none","NA",NA,"Umbara",FALSE
+"Mon","Mothma","MM",59.0552,150,NA,"auburn","f","HUMAN","Chandrila",FALSE
+"Rugor","Nass","RN",81.1024,206,NA,"none","m","GUNGAN","Naboo",FALSE
+"Jocasta","Nu","JN",65.7481,167,NA,"white","f","HUMAN","Coruscant",FALSE
+"Nien","Nunb","NN",62.9922,160,68,"none","m","SULLUSTAN","Sullust",FALSE
+"Barriss","Offee","BO",65.3544,166,50,"black","f","MIRIALAN","Mirial",FALSE
+"Ric","Olié","RO",72.0473,183,NA,"brown","m","HUMAN","Naboo",TRUE
+"Leia","Organa","LO",59.0552,150,49,"brown","f","HUMAN","Alderaan",TRUE
+"Quarsh","Panaka","QP",72.0473,183,NA,"black","m","HUMAN","Naboo",FALSE
+"Yarael","Poof","YP",103.9371,264,NA,"none","m","QUERMIAN","Quermia",FALSE
+"Bail","Prestor Organa","BP",75.1969,191,NA,"black","m","HUMAN","Alderaan",FALSE
+"Ben","Quadinaros","BQ",64.1733,163,65,"none","m","TOONG","Tund",FALSE
+"Ayla","Secura","AS",70.0788,178,55,"none","f","TWI'LEK","Ryloth",FALSE
+"Anakin","Skywalker","AS",74.0158,188,84,"blond","m","HUMAN","Tatooine",FALSE
+"Luke","Skywalker","LS",67.7166,172,77,"blond","m","HUMAN","Tatooine",FALSE
+"Shmi","Skywalker","SS",64.1733,163,NA,"black","f","HUMAN","Tatooine",FALSE
+"Han","Solo","HS",70.8662,180,80,"brown","m","HUMAN","Corellia",TRUE
+"Lama","Su","LS",90.1575,229,88,"none","m","KAMINOAN","Kamino",FALSE
+"Wicket","Systri Warrick","WS",34.6457,88,20,"brown","m","EWOK","Endor",TRUE
+"Wat","Tambor","WT",75.9843,193,48,"none","m","SKAKOAN","Skako",FALSE
+"Wilhuff","Tarkin","WT",70.8662,180,NA,"auburn, grey","m","HUMAN","Eriadu",FALSE
+"Roos","Tarpals","RT",88.189,224,82,"none","m","GUNGAN","Naboo",FALSE
+"Shaak","Ti","ST",70.0788,178,57,"none","f","TOGRUTA","Shili",FALSE
+"Saesee","Tiin","ST",74.0158,188,NA,"none","m","IKTOTCHI","Iktotch",FALSE
+"Jek","Tono Porkins","JT",70.8662,180,110,"brown","NA",NA,"Bestine IV",TRUE
+"Ratts","Tyerel","RT",31.1024,79,15,"none","m","ALEENA","Aleen Minor",FALSE
+"Gregar","Typho","GT",72.8347,185,85,"black","NA",NA,"Naboo",FALSE
+"Luminara","Unduli","LU",66.9292,170,56.2,"black","f","MIRIALAN","Mirial",FALSE
+"Darth","Vader","DV",79.5276,202,136,"none","m","HUMAN","Tatooine",FALSE
+"Finis","Valorum","FV",66.9292,170,NA,"blond","m","HUMAN","Coruscant",FALSE
+"Taun","We","TW",83.8583,213,NA,"none","f","KAMINOAN","Kamino",FALSE
+"Zam","Wesell","ZW",66.1418,168,55,"blonde","f","CLAWDITE","Zolan",FALSE
+"Beru","Whitesun Lars","BW",64.9607,165,75,"brown","f","HUMAN","Tatooine",TRUE
+"Mace","Windu","MW",74.0158,188,84,"none","m","HUMAN","Haruun Kal",FALSE
+"Poggle","the Lesser","Pt",72.0473,183,80,"none","m","GEONOSIAN","Geonosis",FALSE
+"Ackbar",NA,"ANA",70.8662,180,83,"none","m","MON CALAMARI","Mon Cala",FALSE
+"Bossk",NA,"BNA",74.8032,190,113,"none","m","TRANDOSHAN","Trandosha",FALSE
+"C-3PO",NA,"CNA",65.7481,167,75,NA,"m","DROID","Tatooine",NA
+"Chewbacca",NA,"CNA",89.7638,228,112,"brown","m","WOOKIEE","Kashyyyk",TRUE
+"Cordé",NA,"CNA",61.8111,157,NA,"brown","NA",NA,"Naboo",TRUE
+"Dooku",NA,"DNA",75.9843,193,80,"white","m","HUMAN","Serenno",FALSE
+"Dormé",NA,"DNA",64.9607,165,NA,"brown","f","HUMAN","Naboo",TRUE
+"Gasgano",NA,"GNA",48.0315,122,NA,"none","m","XEXTO","Troiken",FALSE
+"Greedo",NA,"GNA",68.1103,173,74,NA,"m","RODIAN","Rodia",NA
+"Grievous",NA,"GNA",85.0394,216,159,"none","m","KALEESH","Kalee",FALSE
+"IG-88",NA,"INA",78.7402,200,140,"none","m","DROID",NA,FALSE
+"Ki-Adi-Mundi",NA,"KNA",77.9528,198,82,"white","m","CEREAN","Cerea",FALSE
+"Lobot",NA,"LNA",68.8977,175,79,"none","m","HUMAN","Bespin",FALSE
+"Palpatine",NA,"PNA",66.9292,170,75,"grey","m","HUMAN","Naboo",FALSE
+"R2-D2",NA,"RNA",37.7953,96,32,NA,"m","DROID","Naboo",NA
+"R4-P17",NA,"RNA",37.7953,96,NA,"none","f","DROID",NA,FALSE
+"R5-D4",NA,"RNA",38.189,97,32,NA,"m","DROID","Tatooine",NA
+"Sebulba",NA,"SNA",44.0945,112,40,"none","m","DUG","Malastare",FALSE
+"Tarfful",NA,"TNA",92.126,234,136,"brown","m","WOOKIEE","Kashyyyk",TRUE
+"Watto",NA,"WNA",53.937,137,NA,"black","m","TOYDARIAN","Toydaria",FALSE
+"Yoda",NA,"YNA",25.9843,66,17,"white","m","YODA'S SPECIES",NA,FALSE
