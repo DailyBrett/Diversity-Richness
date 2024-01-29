@@ -1,0 +1,32 @@
+---
+title: "Editting Data"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+
+loading_zipdata <- "~/repos/Diversity-Richness/Zip.Code.Datasets/zip_data_unedited_nolabels.csv" #making a pathway to the downloaded census data
+Unedited_zipdata <- read.csv(loading_zipdata) #loading the census data
+
+```
+
+
+
+
+```{r}
+
+
+reduced_collumns_data <- c(2, 52, 60:137) #removing unnecessary columns
+
+
+City_Census_data<- Unedited_censusdata[ , reduced_collumns_data] #make a new table without unnecessary columns
+
+colnames(City_Census_data) <- c("Qualifying_Name", "Area_Name", "Total_Population", "Total_Population_Male", "Total_Population_Female", "X_Total_Population_Male", "X_Total_Population_Female", "Total_Population2", "Total_Population_Under_5_Years", "Total_Population_5_to_9_Years", "Total_Population_10_to_14_Years", "Total_Population_15_to_17_Years", "Total_Population_18_to_24_Years", "Total_Population_25_to_34_Years", "Total_Population_35_to_44_Years", "Total_Population_45_to_54_Years", "Total_Population_55_to_64_Years", "Total_Population_65_to_74_Years", "Total_Population_75_to_84_Years", "Total_Population_85_Years_And_Over","X_Total_Population_Under_5_Years", "X_Total_Population_5_to_9_Years", "X_Total_Population_10_to_14_Years", "X_Total_Population_15_to_17_Years", "X_Total_Population_18_to_24_Years", "X_Total_Population_25_to_34_Years", "X_Total_Population_35_to_44_Years", "X_Total_Population_45_to_54_Years", "X_Total_Population_55_to_64_Years", "X_Total_Population_65_to_74_Years", "X_Total_Population_75_to_84_Years", "X_Total_Population_85_Years_And_Over", "Total_Population3", "Total_Population_White_Alone", "Total_Population_Black_or African_American_Alone", "Total_Population_American_Indian_And_Native_Alaskan_Alone", "Total_Population_Asian_Alone", "Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "Total_Population_Some_Other_Race_Alone","Total_Population_Two_Or_More_Races","X_Total_Population_White_Alone", "X_Total_Population_Black_or African_American_Alone", "X_Total_Population_American_Indian_And_Native_Alaskan_Alone", "X_Total_Population_Asian_Alone", "X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "X_Total_Population_Some_Other_Race_Alone","X_Total_Population_Two_Or_More_Races","Households","Households_Family_Households","Households_Married_Couple_Family","Households_Other_Family","Households_Male_Householder_No_Wife_Present","Households_Female_Householder_No_Husband_Present","Households_Nonfamily_Households","Nonfamily_Households_Male_Householder","Nonfamily_Households_Female_Householder","X_Households_Family_Households","X_Households_Married_Couple_Family","X_Households_Other_Family","X_Households_Male_Householder_No_Wife_Present","X_Households_Female_Householder_No_Husband_Present","X_Households_Nonfamily_Households","X_Nonfamily_Households_Male_Householder","X_Nonfamily_Households_Female_Householder","Median_Household_Income","Housing_Units","Occupied_Housing_Units","Owner_Occupied","Renter_Occupied","X_Owner_Occupied","X_Renter_Occupied","Population_With_Poverty_Status","Poverty_Status_Under_1.00","Poverty_Status_1.00_to_1.99","Poverty_Status_Under_2.00","Poverty_Status_2.00_and_Over","X_Poverty_Status_Under_1.00","X_Poverty_Status_1.00_to_1.99","X_Poverty_Status_Under_2.00","X_Poverty_Status_2.00_and_Over")
+#writing usable column names
+
+write.csv(City_Census_data, file = "~/Desktop/CensusData/City_Census_data.csv", row.names = FALSE)
+#saving the table as a csv file
