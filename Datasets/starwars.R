@@ -107,7 +107,7 @@ str(sw.wranged)
 sw.wrangled <- sw.wranged
 #fix name
 
-sw.wrangled$hair <- as.factor(sw.wrangled$hair)
+
 sw.wrangled$species <- as.factor(sw.wrangled$species)
 sw.wrangled$gender <- as.factor(sw.wrangled$gender)
 sw.wrangled$homeworld <- as.factor(sw.wrangled$homeworld)
@@ -129,7 +129,49 @@ view(sw.wrangled)
 # Use any returned information about mismatches to adjust your code as needed
 all.equal(sw.wrangled, sw.wrangled.goal)
 
+sw.wrangled <- sw.wrangled %>%
+  mutate(hair = factor(replace_na(hair, "bald")))
+
+sw.wrangled$hair <- as.factor(sw.wrangled$hair)
+
 # Save to a specific directory
 write.csv(sw.wrangled, file = "~/repos/Diversity-Richness/Datasets/sw.wrangled.csv", row.names = FALSE)
+
+#Need to make Plot 1 using a histogram from sw.wrangled.csv, with x axis height_cm
+ggplot(sw.wrangled) +    # put in dataset
+  geom_histogram(aes(x = height_cm), binwidth = 10) + 
+  labs(x = "height_cm", y = "count") 
+
+#Need to make Plot 2 using a bar graph from sw.wrangled.csv, with x axis hair
+#However, I could not find a way to easily sort the hair category in descending order
+
+table(sw.wrangled$hair) #find how many are in each category
+sorted_hair_vector <- c("none","brown","black","bald","white","blond","auburn","auburn, grey",
+                        "auburn, white","blonde","brown, grey","grey")
+#Make a vector with the hair factors in descending order
+
+sw.sorted <- sw.wrangled %>%
+  mutate(hair = factor(hair, levels = sorted_hair_vector)) %>%
+  arrange(hair) #make a dataset with arragned with the hair factors in this order
+
+ggplot(sw.sorted) + #put in new data set
+  geom_bar(aes(x = hair)) + #select hair column and bar graph
+  labs(x = "sorted_hair", y = "count") #add labels
+
+#Need to make Plot 3 using a scatter plot from sw.wrangled.csv, with x as height_in and y as mass
+
+ggplot(sw.wrangled) + #put in data set
+  geom_point(aes(x = height_in, y = mass), shape = 24, size = 0.5, fill = "black") + #select x,y,shape, and size
+  labs(x = "height_in", y = "mass") + #add labels
+  coord_cartesian(xlim = c(25,95), ylim = c(10,160)) + #approximating upper and lower limits in each direction
+  scale_y_continuous(breaks = seq(40,160, by = 40)) + #set y breaks
+  scale_x_continuous(breaks = seq(40, 80, by = 20))  #set x breaks
+
+
+
+
+
+
+
 
 

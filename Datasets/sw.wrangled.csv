@@ -6,7 +6,7 @@
 "Dud","Bolt","DB",37.0079,94,45,"none","m","VULPTEREEN","Vulpter",FALSE
 "Lando","Calrissian","LC",69.6851,177,79,"black","m","HUMAN","Socorro",FALSE
 "Biggs","Darklighter","BD",72.0473,183,84,"black","m","HUMAN","Tatooine",FALSE
-"Jabba","Desilijic Tiure","JD",68.8977,175,1358,NA,"m","HUTT","Nal Hutta",NA
+"Jabba","Desilijic Tiure","JD",68.8977,175,1358,"bald","m","HUTT","Nal Hutta",NA
 "Boba","Fett","BF",72.0473,183,78.2,"black","m","HUMAN","Kamino",FALSE
 "Jango","Fett","JF",72.0473,183,79,"black","m","HUMAN","Concord Dawn",FALSE
 "Kit","Fisto","KF",77.1654,196,87,"none","m","NAUTOLAN","Glee Anselm",FALSE
@@ -61,21 +61,21 @@
 "Poggle","the Lesser","Pt",72.0473,183,80,"none","m","GEONOSIAN","Geonosis",FALSE
 "Ackbar",NA,"ANA",70.8662,180,83,"none","m","MON CALAMARI","Mon Cala",FALSE
 "Bossk",NA,"BNA",74.8032,190,113,"none","m","TRANDOSHAN","Trandosha",FALSE
-"C-3PO",NA,"CNA",65.7481,167,75,NA,"m","DROID","Tatooine",NA
+"C-3PO",NA,"CNA",65.7481,167,75,"bald","m","DROID","Tatooine",NA
 "Chewbacca",NA,"CNA",89.7638,228,112,"brown","m","WOOKIEE","Kashyyyk",TRUE
 "Cordé",NA,"CNA",61.8111,157,NA,"brown","NA",NA,"Naboo",TRUE
 "Dooku",NA,"DNA",75.9843,193,80,"white","m","HUMAN","Serenno",FALSE
 "Dormé",NA,"DNA",64.9607,165,NA,"brown","f","HUMAN","Naboo",TRUE
 "Gasgano",NA,"GNA",48.0315,122,NA,"none","m","XEXTO","Troiken",FALSE
-"Greedo",NA,"GNA",68.1103,173,74,NA,"m","RODIAN","Rodia",NA
+"Greedo",NA,"GNA",68.1103,173,74,"bald","m","RODIAN","Rodia",NA
 "Grievous",NA,"GNA",85.0394,216,159,"none","m","KALEESH","Kalee",FALSE
 "IG-88",NA,"INA",78.7402,200,140,"none","m","DROID",NA,FALSE
 "Ki-Adi-Mundi",NA,"KNA",77.9528,198,82,"white","m","CEREAN","Cerea",FALSE
 "Lobot",NA,"LNA",68.8977,175,79,"none","m","HUMAN","Bespin",FALSE
 "Palpatine",NA,"PNA",66.9292,170,75,"grey","m","HUMAN","Naboo",FALSE
-"R2-D2",NA,"RNA",37.7953,96,32,NA,"m","DROID","Naboo",NA
+"R2-D2",NA,"RNA",37.7953,96,32,"bald","m","DROID","Naboo",NA
 "R4-P17",NA,"RNA",37.7953,96,NA,"none","f","DROID",NA,FALSE
-"R5-D4",NA,"RNA",38.189,97,32,NA,"m","DROID","Tatooine",NA
+"R5-D4",NA,"RNA",38.189,97,32,"bald","m","DROID","Tatooine",NA
 "Sebulba",NA,"SNA",44.0945,112,40,"none","m","DUG","Malastare",FALSE
 "Tarfful",NA,"TNA",92.126,234,136,"brown","m","WOOKIEE","Kashyyyk",TRUE
 "Watto",NA,"WNA",53.937,137,NA,"black","m","TOYDARIAN","Toydaria",FALSE
