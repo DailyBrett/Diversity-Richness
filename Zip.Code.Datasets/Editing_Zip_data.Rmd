@@ -35,6 +35,7 @@ write.csv(Zipcode_Census_data, file = "~/repos/Diversity-Richness/Zip.Code.Datas
 ```
 
 
+
 ```{r income plot}
 library(tidyverse)
 library(ggplot2)
@@ -46,6 +47,10 @@ Percent African American = BLUE
 Percent Asian = GREEN 
 Percent Native American = PURPLE 
 Percent Hispanic = YELLOW"
+
+Zipcode_Census_data %>%
+  group_by()
+
 
 
 ggplot(Zipcode_Census_data) +
@@ -64,6 +69,25 @@ ggplot(Zipcode_Census_data) +
 
 
 
+```{r income plot attempt 2}
+library(tidyverse)
+library(ggplot2)
+
+ggplot(Zipcode_Census_data) +
+  geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income, color = "red"), fill ="white", show.legend = T)  +
+  geom_smooth(aes(x = X_Total_Population_Black_or_African_American_Alone, y = Median_Household_Income, color = "blue"), fill = "white", show.legend = T) +
+  geom_smooth(aes(x = X_Total_Population_Asian_Alone, y = Median_Household_Income, color = "green"), fill = "white", show.legend = T) +
+  geom_smooth(aes(x = X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = Median_Household_Income, color = "purple"), fill = "white", show.legend = T) +
+  geom_smooth(aes(x = X_Hispanic, y = Median_Household_Income, color = "yellow"), fill = "white", show.legend = T) +
+  scale_color_manual(values = c("red" = "red", "blue" = "blue", "green" = "green", "purple" = "purple", "yellow" = "yellow"),
+                     name = "Race",
+                     labels = c("White", "Black or African American", "Asian", "American Indian And Native Alaskan", "Hispanic")) #created a more effective key +
+  labs(x = "Percentage Population of Population for Each Racial Demgraphic", y = "Median Household Income",
+       title = "Racial Demographics and Median Household Income")
+
+```
+
+
 ```{r}
 library(tidyverse)
 library(ggplot2)
@@ -77,5 +101,30 @@ ggplot(Zipcode_Census_data) +
 
 ```
 
+```{r}
+Zipcode_with_Zones <- Zipcode_Census_data %>%
+  mutate(Zipcode_Zone= case_when(
+    substr(Name, 7, 7) == "0" ~ "North East",
+    substr(Name, 7, 7) == "1" ~ "New York Region (Lower North East)",
+    substr(Name, 7, 7) == "2" ~ "Central East Coast",
+    substr(Name, 7, 7) == "3" ~ "South East",
+    substr(Name, 7, 7) == "4" ~ "Great Lakes",
+    substr(Name, 7, 7) == "5" ~ "Northern Midwest",
+    substr(Name, 7, 7) == "6" ~ "Central Interior",
+    substr(Name, 7, 7) == "7" ~ "Texas Region",
+    substr(Name, 7, 7) == "8" ~ "Western Interior",
+    substr(Name, 7, 7) == "9" ~ "West Coast (and Hawaii/Alaska)",
+    TRUE ~ "Other"  # Default case
+  ), .after = Area_Name)
+
+# Create the boxplot
+ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Alone, fill = Zipcode_Zone)) +
+  geom_boxplot(outlier.shape = NA) +
+  labs(x = "ZIP Code Zones", y = "Percentage White",
+       title = "Percentage of Population White by Zip Code Region", fill = "Zone Names") +
+  theme(axis.text.x = element_blank())
+
+
+```
 
 

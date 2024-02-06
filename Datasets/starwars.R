@@ -167,8 +167,59 @@ ggplot(sw.wrangled) + #put in data set
   scale_y_continuous(breaks = seq(40,160, by = 40)) + #set y breaks
   scale_x_continuous(breaks = seq(40, 80, by = 20))  #set x breaks
 
+#Assignment 11: Plot 1
+choosen_colors <- olors <- c("red", "orange", "yellowgreen", "green", "cyan", "turquoise", "blue", "purple", "magenta", "pink")
+#made colors similar to sample but could not find exact
+
+elimin_mass_na <- drop_na(sw.sorted, mass)
+
+ggplot(elimin_mass_na) + #put in data set
+  geom_boxplot(aes(x = hair, y = mass, fill= hair), width = 1) +
+  geom_point(aes(x = hair, y = mass), size = 0.8, fill = "black") + #I am not why some points on none are larger
+  labs(x = "Hair color(s)", y = "Mass (kg)", fill = "Colorful Hair") +
+  coord_cartesian(ylim = c(10,160)) +
+  scale_y_continuous(breaks = seq(40,160, by = 40)) +
+  scale_fill_manual(values = choosen_colors)
+
+#Assignment 11: Plot 2
+
+sw_remove_na2 <- drop_na(sw.wrangled, mass, height_in, brown_hair) #remove three column's NAs
+
+custom_labeller <- function(variable,value){
+  return(c("Facet 1" = "Has brown hair", "Facet 2" = "No brown hair")[value])
+}
+#had to make a function to relabel facets, feel like there has to be an easier way
+
+ggplot(sw_remove_na2, aes(x=mass, y=height_in)) + 
+  geom_smooth(method = "lm", se = TRUE, color = "blue")  +
+  geom_point() +  # Use points to represent data
+  facet_wrap(~brown_hair, labeller = custom_labeller) +
+  coord_cartesian(xlim = c(-200,200), ylim = c(-4,200)) + #approximating upper and lower limits in each direction
+  scale_x_continuous(breaks = seq(-200, 200, by = 50)) +
+  scale_y_continuous(breaks = c(-4, 20, 23, 80, 100)) +
+  labs(x = "mass", y = "height_in", title = "Mass vs. height by brown-hair-havingness", subtitle = "A critically important analysis") +
+  theme(panel.background = element_rect(fill = "white"),  # Set the panel background to white
+        panel.grid.major = element_line(color = "grey92"),  # Set the major grid lines to light grey
+        panel.grid.minor = element_line(color = "grey92")) # I feel there is a simpler way to change the theme in this manner but I do not know it
+  
+ 
+#Assignment 11: Plot 3
+
+sw_with_first_inital <- sw.wrangled %>%
+  mutate(species_first_letter = paste0(substr(species, 1, 1)), .after = species) %>%
+  mutate(species_first_letter = na_if(species_first_letter, "NA")) 
+#making a new column for first letter species, wrangling NA
+  sw_remove_na3 <- drop_na(sw_with_first_inital, species_first_letter, gender)
+  sw_remove_na3 <- sw_remove_na3 %>%
+    mutate(species_first_letter = fct_rev(factor(species_first_letter))) #switch order
+  
+ggplot(sw_remove_na3, aes(y =species_first_letter, fill = gender)) +
+  geom_bar() +
+  theme_classic()
 
 
+  
+  
 
 
 
