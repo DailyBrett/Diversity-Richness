@@ -74,18 +74,40 @@ library(tidyverse)
 library(ggplot2)
 
 ggplot(Zipcode_Census_data) +
-  geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income, color = "red"), fill ="white", show.legend = T)  +
-  geom_smooth(aes(x = X_Total_Population_Black_or_African_American_Alone, y = Median_Household_Income, color = "blue"), fill = "white", show.legend = T) +
-  geom_smooth(aes(x = X_Total_Population_Asian_Alone, y = Median_Household_Income, color = "green"), fill = "white", show.legend = T) +
-  geom_smooth(aes(x = X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = Median_Household_Income, color = "purple"), fill = "white", show.legend = T) +
-  geom_smooth(aes(x = X_Hispanic, y = Median_Household_Income, color = "yellow"), fill = "white", show.legend = T) +
-  scale_color_manual(values = c("red" = "red", "blue" = "blue", "green" = "green", "purple" = "purple", "yellow" = "yellow"),
+  geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income, color = "#A1C9F4"), fill ="#A1C9F4", alpha = 0.2, show.legend = T)  +
+  geom_smooth(aes(x = X_Total_Population_Black_or_African_American_Alone, y = Median_Household_Income, color = "#FFB482"), fill = "#FFB482", alpha = 0.2, show.legend = T) + #Fixed shading
+  geom_smooth(aes(x = X_Total_Population_Asian_Alone, y = Median_Household_Income, color = "#8DE5A1"), fill = "#8DE5A1", alpha = 0.2, show.legend = T) +
+  geom_smooth(aes(x = X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = Median_Household_Income, color = "#D0BBFF"), fill = "#D0BBFF", alpha = 0.2, show.legend = T) +
+  geom_smooth(aes(x = X_Hispanic, y = Median_Household_Income, color = "#FF9F9B"), fill = "#FF9F9B", alpha = 0.2, show.legend = T) +
+  scale_color_manual(values = c( "#8DE5A1" = "#8DE5A1","#A1C9F4" = "#A1C9F4","#D0BBFF" = "#D0BBFF", "#FF9F9B" = "#FF9F9B", "#FFB482" = "#FFB482"), #Fixed order
                      name = "Race",
-                     labels = c("White", "Black or African American", "Asian", "American Indian And Native Alaskan", "Hispanic")) #created a more effective key +
-  labs(x = "Percentage Population of Population for Each Racial Demgraphic", y = "Median Household Income",
-       title = "Racial Demographics and Median Household Income")
+                     labels = c("Asian", "White", "Native American/Alaskan", "Hispanic", "Black")) +
+  labs(x = "Percentage Population of Population for Each Racial Demgraphic", y = "Median Household Income", title = "Racial Demographics and Median Household Income")
+
+#Don't know how to correct red shading on key
 
 ```
+
+
+```{r trial}
+ggplot(Zipcode_Census_data) +
+  geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income, color = "#A1C9F4"), fill ="white", show.legend = T)  +
+  geom_smooth(aes(x = X_Total_Population_Black_or_African_American_Alone, y = Median_Household_Income, color = "#FFB482"), fill = "white", show.legend = T) +
+  geom_smooth(aes(x = X_Total_Population_Asian_Alone, y = Median_Household_Income, color = "#8DE5A1"), fill = "white", show.legend = T) +
+  geom_smooth(aes(x = X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = Median_Household_Income, color = "#D0BBFF"), fill = "white", show.legend = T) +
+  geom_smooth(aes(x = X_Hispanic, y = Median_Household_Income, color = "#FF9F9B"), fill = "white", show.legend = T) +
+  scale_color_manual(values = c("#A1C9F4" = "#A1C9F4", "#FFB482" = "#FFB482", "#8DE5A1" = "#8DE5A1", "#D0BBFF" = "#D0BBFF", "#FF9F9B" = "#FF9F9B"),
+                     name = "Race",
+                     labels = c("White", "Black or African American", "Asian", "American Indian And Native Alaskan", "Hispanic")) +
+  labs(x = "Percentage Population of Population for Each Racial Demgraphic", y = "Median Household Income", title = "Racial Demographics and Median Household Income").
+
+```
+
+
+
+
+
+
 
 
 ```{r}
@@ -115,7 +137,7 @@ Zipcode_with_Zones <- Zipcode_Census_data %>%
     substr(Name, 7, 7) == "8" ~ "Western Interior",
     substr(Name, 7, 7) == "9" ~ "West Coast (and Hawaii/Alaska)",
     TRUE ~ "Other"  # Default case
-  ), .after = Area_Name)
+  ), .after = Area_Name) %>%
 
 # Create the boxplot
 ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Alone, fill = Zipcode_Zone)) +

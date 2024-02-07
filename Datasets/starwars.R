@@ -167,7 +167,7 @@ ggplot(sw.wrangled) + #put in data set
   scale_y_continuous(breaks = seq(40,160, by = 40)) + #set y breaks
   scale_x_continuous(breaks = seq(40, 80, by = 20))  #set x breaks
 
-#Assignment 11: Plot 1
+#Assignment 12: Plot 1
 choosen_colors <- olors <- c("red", "orange", "yellowgreen", "green", "cyan", "turquoise", "blue", "purple", "magenta", "pink")
 #made colors similar to sample but could not find exact
 
@@ -181,7 +181,7 @@ ggplot(elimin_mass_na) + #put in data set
   scale_y_continuous(breaks = seq(40,160, by = 40)) +
   scale_fill_manual(values = choosen_colors)
 
-#Assignment 11: Plot 2
+#Assignment 12: Plot 2
 
 sw_remove_na2 <- drop_na(sw.wrangled, mass, height_in, brown_hair) #remove three column's NAs
 
@@ -203,7 +203,7 @@ ggplot(sw_remove_na2, aes(x=mass, y=height_in)) +
         panel.grid.minor = element_line(color = "grey92")) # I feel there is a simpler way to change the theme in this manner but I do not know it
   
  
-#Assignment 11: Plot 3
+#Assignment 12: Plot 3
 
 sw_with_first_inital <- sw.wrangled %>%
   mutate(species_first_letter = paste0(substr(species, 1, 1)), .after = species) %>%
@@ -217,10 +217,62 @@ ggplot(sw_remove_na3, aes(y =species_first_letter, fill = gender)) +
   geom_bar() +
   theme_classic()
 
+#Assignment 13: Plot 1
+  
+library(ggsci)
+library(jtools)
 
+sw_reclass_gender <- sw.wranged %>%
+  mutate(gender = case_when(
+    gender == "m" ~ "Male",
+    gender == "f" ~ "Female",
+    gender == "NA" ~ "Other"
+  )) %>%
+  rename(Gender = gender)
+
+sw_reclass_gender <- drop_na(sw_reclass_gender, mass, height_cm)
+
+
+ggplot(sw_reclass_gender, aes(x= height_cm, y = mass, color = Gender)) +
+  geom_smooth(method = "lm", se = TRUE) +
+  geom_point() +
+  theme_light() +
+  scale_fill_uchicago() +
+  facet_wrap(vars(Gender)) +
+  labs(x = "Height (cm)", y = "Mass (kg)", title = "Height and weight across gender presentation", 
+       subtitle = 'A cautionary tale in misleading "free" axis scales & bad design choices', caption = "Color hint: use ggsci package!")
+  
+# Load the necessary library
+if (!require(ggthemes)) install.packages("ggthemes")
+library(ggthemes)
+
+# Create the plot
+ggplot(sw_reclass_gender, aes(x= height_cm, y = mass, color = Gender)) +
+  geom_smooth(method = "lm", se = TRUE, fill = "#CBCBFF") +
+  geom_point(alpha = 0.5) +
+  theme_light() +
+  scale_color_uchicago() +  # Use scale_color_uchicago() instead of scale_fill_uchicago()
+  facet_wrap(vars(Gender),scale = "free_y",) +
+  coord_cartesian(xlim = c(60,270)) +
+  scale_x_continuous(breaks = seq(60, 270, by = 30)) +
+  labs(x = "Height (cm)", y = "Mass (kg)", title = "Height and weight across gender presentation", 
+       subtitle = 'A cautionary tale in misleading "free" axis scales & bad design choices', caption = "Color hint: use ggsci package!") +
+  guides(color = guide_legend(title = "Gender Presentation")) +
+  theme(panel.background = element_rect(fill = "#FFEDED"),  # Set the panel background to white
+        panel.grid.major.x = element_line(color = "white", linetype = "dashed", size = 0.5),
+        panel.grid.major.y = element_line(color = "#DFDADA", linetype = "dotdash"),
+        legend.position = c("bottom"),
+        legend.background = element_rect(fill = "#CBCBFF"),
+        text = element_text(family = "Comic Sans MS"),
+        strip.text = element_text(hjust = 0),
+        strip.background = element_rect(fill = "#006300"),
+        legend.title = element_text(family = "Brush Script MT"),
+        axis.text.x = element_text(angle = 45),
+        plot.caption = element_text(hjust = 0, angle = 180, color = "#FF605C")
+        ) 
   
   
-
+  
 
 
 
