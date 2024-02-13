@@ -1,21 +1,24 @@
 ---
 title: "Editting Data"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*.
 
-```{r}
+```{r loading-data}
 
 loading_zipdata <- "~/repos/Diversity-Richness/Zip.Code.Datasets/zip_data_unedited_nolabels.csv" #making a pathway to the downloaded census data
 Unedited_zipdata <- read.csv(loading_zipdata) #loading the census data
 
 ```
 
-
-```{r}
+```{r editting-orignal-data}
 reduced_collumns_zip <- c(1:2, 33:34, 42, 47:146) #removing unnecessary columns
 
 
@@ -29,14 +32,12 @@ colnames(Zipcode_Census_data) <- c("FIPS", "Name", "3_Digit_Tabulation", "5_Digi
 
 ```
 
-```{r}
+```{r saving_Zipcode_Census_data}
 write.csv(Zipcode_Census_data, file = "~/repos/Diversity-Richness/Zip.Code.Datasets/Zipcode_Census_data.csv", row.names = FALSE)
 #saving the table as a csv file
 ```
 
-
-
-```{r first attmept income plot}
+```{r first-attmept-income-plot}
 library(tidyverse)
 library(ggplot2)
 
@@ -66,10 +67,8 @@ ggplot(Zipcode_Census_data) +
 
 
 ```
-
-
-
-```{r race-income plot }
+(ref:Income_By_Racial_Demographic_Figure) Income By Racial Demographic Figure
+```{r race-income-plot,fig.cap= "(ref:Income_By_Racial_Demographic_Figure)"}
 library(tidyverse)
 library(ggplot2)
 
@@ -88,8 +87,7 @@ ggplot(Zipcode_Census_data) +
 
 ```
 
-
-```{r lm plot}
+```{r lm-plot}
 
 library(tidyverse)
 library(ggplot2)
@@ -108,14 +106,7 @@ ggplot(Zipcode_Census_data) +
 
 ```
 
-
-
-
-
-
-
-
-```{r}
+```{r Whiteness-Income-Smooth-Plot}
 library(tidyverse)
 library(ggplot2)
 
@@ -128,10 +119,11 @@ ggplot(Zipcode_Census_data) +
 
 ```
 
-```{r}
+```{r Making_ZipCode_Categories}
 Zipcode_with_Zones <- Zipcode_Census_data %>%
   mutate(Zipcode_Zone= case_when(
-    substr(Name, 7, 7) == "0" ~ "North East",
+   substr(Name, 7, 8) == "00" ~ "Puerto Rico",
+   substr(Name, 7, 7) == "0" ~ "North East",
     substr(Name, 7, 7) == "1" ~ "New York Region (Lower North East)",
     substr(Name, 7, 7) == "2" ~ "Central East Coast",
     substr(Name, 7, 7) == "3" ~ "South East",
@@ -141,8 +133,79 @@ Zipcode_with_Zones <- Zipcode_Census_data %>%
     substr(Name, 7, 7) == "7" ~ "Texas Region",
     substr(Name, 7, 7) == "8" ~ "Western Interior",
     substr(Name, 7, 7) == "9" ~ "West Coast (and Hawaii/Alaska)",
+    substr(Name, 7, 8) == "00" ~ "Puerto Rico",
     TRUE ~ "Other"  # Default case
   ), .after = Area_Name)
+  
+Zipcode_with_States <- Zipcode_with_Zones %>%
+  mutate(State_Territory= case_when(
+    between(as.integer(substr(Name, 7, 9)), 039, 049) ~ "ME",
+    between(as.integer(substr(Name, 7, 9)), 030, 038) ~ "NH",
+    between(as.integer(substr(Name, 7, 9)), 010, 027) ~ "MA",
+    between(as.integer(substr(Name, 7, 9)), 028, 029) ~ "RI",
+    between(as.integer(substr(Name, 7, 9)), 150, 196) ~ "PA",
+    between(as.integer(substr(Name, 7, 9)), 197, 199) ~ "DE",
+    between(as.integer(substr(Name, 7, 9)), 206, 219) ~ "MD",
+    between(as.integer(substr(Name, 7, 9)), 200, 205) ~ "DC",
+    between(as.integer(substr(Name, 7, 9)), 220, 246) ~ "VA",
+    between(as.integer(substr(Name, 7, 9)), 247, 269) ~ "WV",
+    between(as.integer(substr(Name, 7, 9)), 386, 399) ~ "MS",
+    between(as.integer(substr(Name, 7, 9)), 370, 385) ~ "TN",
+    between(as.integer(substr(Name, 7, 9)), 700, 715) ~ "LA",
+    between(as.integer(substr(Name, 7, 9)), 716, 729) ~ "AR",
+    between(as.integer(substr(Name, 7, 9)), 550, 567) ~ "MN",
+    between(as.integer(substr(Name, 7, 9)), 820, 831) ~ "WY",
+    between(as.integer(substr(Name, 7, 9)), 832, 839) ~ "ID",
+    between(as.integer(substr(Name, 7, 9)), 870, 884) ~ "NM",
+    between(as.integer(substr(Name, 7, 9)), 889, 899) ~ "NV",
+    between(as.integer(substr(Name, 7, 9)), 900, 961) ~ "CA",
+    between(as.integer(substr(Name, 7, 9)), 980, 994) ~ "WA",
+    between(as.integer(substr(Name, 7, 9)), 967, 968) ~ "HI",
+    between(as.integer(substr(Name, 7, 9)), 995, 999) ~ "AK",
+    between(as.integer(substr(Name, 7, 9)), 962, 966) ~ "AP",
+    between(as.integer(substr(Name, 7, 9)), 006, 009) ~ "PR/VI",
+    between(as.integer(substr(Name, 7, 8)), 10, 14) ~ "NY",
+    between(as.integer(substr(Name, 7, 8)), 07, 08) ~ "NJ",
+    between(as.integer(substr(Name, 7, 8)), 27, 28) ~ "NC",
+    between(as.integer(substr(Name, 7, 8)), 30, 31) ~ "GA",
+    between(as.integer(substr(Name, 7, 8)), 32, 34) ~ "FL",
+    between(as.integer(substr(Name, 7, 8)), 35, 36) ~ "AL",
+    between(as.integer(substr(Name, 7, 8)), 40, 42) ~ "KY",
+    between(as.integer(substr(Name, 7, 8)), 43, 45) ~ "OH",
+    between(as.integer(substr(Name, 7, 8)), 46, 47) ~ "IN",
+    between(as.integer(substr(Name, 7, 8)), 48, 49) ~ "MI",
+    between(as.integer(substr(Name, 7, 8)), 50, 12) ~ "IA",
+    between(as.integer(substr(Name, 7, 8)), 53, 54) ~ "WI",
+    between(as.integer(substr(Name, 7, 8)), 60, 62) ~ "IL",
+    between(as.integer(substr(Name, 7, 8)), 63, 65) ~ "MO",
+    between(as.integer(substr(Name, 7, 8)), 66, 67) ~ "KS",
+    between(as.integer(substr(Name, 7, 8)), 68, 69) ~ "NE",
+    between(as.integer(substr(Name, 7, 8)), 73, 74) ~ "OK",
+    between(as.integer(substr(Name, 7, 8)), 75, 79) ~ "TX",
+    between(as.integer(substr(Name, 7, 8)), 80, 81) ~ "CO",
+    between(as.integer(substr(Name, 7, 8)), 85, 86) ~ "AZ",
+    str_detect(Name, "05") ~ "VT",
+    str_detect(Name, "06") ~ "CT",
+    str_detect(Name, "29") ~ "SC",
+    str_detect(Name, "57") ~ "SD",
+    str_detect(Name, "58") ~ "ND",
+    str_detect(Name, "59") ~ "MT",
+    str_detect(Name, "84") ~ "UT",
+    str_detect(Name, "97") ~ "OR",
+    str_detect(Name, "09") ~ "AE",
+    str_detect(Name, "340") ~ "AA",
+    str_detect(Name, "969") ~ "PW/FM/MH/MP/GU",
+    str_detect(Name, "96799") ~ "AS",
+    TRUE ~ "Other"  # Default case
+  ), .after = Zipcode_Zone) 
+
+write.csv(Zipcode_with_States, file = "~/repos/Diversity-Richness/Zip.Code.Datasets/Zipcode_data_with_Areas_States.csv", row.names = FALSE)
+
+```
+
+
+(ref:Whiteness_By_Region_Boxplot) Whiteness By Region Boxplot
+```{r Race-income-Box-plot, fig.cap="(ref:Whiteness_By_Region_Boxplot)"}
 
 # Create the boxplot
 ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Alone, fill = Zipcode_Zone)) +
@@ -153,5 +216,43 @@ ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Al
 
 
 ```
+
+
+
+(ref:Demographics_By_Region_Table) Demographics By Region Table
+
+```{r ZIP_Region_Table, fig.cap="(ref:Demographics_By_Region_Table)"}
+
+
+
+Zipcode_with_States %>%
+  group_by(Zipcode_Zone) %>%
+  summarize(
+    mean.percent.white = mean(X_Total_Population_White_Alone, na.rm = T),
+    sd.percent.white = sd(X_Total_Population_White_Alone, na.rm = T),
+    mean.percent.black = mean(X_Total_Population_Black_or_African_American_Alone, na.rm = T),
+    sd.percent.black = sd(X_Total_Population_Black_or_African_American_Alone, na.rm = T),
+    mean.percent.asian = mean(X_Total_Population_Asian_Alone, na.rm = T),
+    sd.percent.asian = sd(X_Total_Population_Asian_Alone, na.rm = T),
+    mean.percent.native.american = mean(X_Total_Population_American_Indian_And_Native_Alaskan_Alone, na.rm = T),
+    sd.percent.native.american = sd(X_Total_Population_American_Indian_And_Native_Alaskan_Alone, na.rm = T),
+    mean.percent.hispanic = mean(X_Hispanic, na.rm = T),
+    sd.percent.hispanic = sd(X_Hispanic, na.rm = T),
+    n.per.region = n()
+  ) %>%
+  knitr::kable(col.names = c("ZIP Code Region", "Percent White",	"SD White",	"Percent Black",	"SD Black",	"Percent Asian", "SD Asian", "Percent Native Americn", "SD Native American", "Percent Hispanic", "SD Hispanic", "ZIP Codes Per Region"), 
+               digits = 2, 
+               align = "lrlrlrlrlrlr",
+               caption = "Average ZIP Code Demographics by Region") %>%
+ kableExtra::kable_styling(position = "left", latex_options = c("scale_down", "hold_position")) %>%
+  kableExtra::column_spec(seq(2, 12, 2), bold = TRUE)
+
+
+#for some reason scale down is not working
+#struggling with captioning and referencing
+```
+
+I will now refer to Figure\ \@ref(fig:Income_By_Racial_Demographic_Figure), Figure\ \@ref(figWhiteness_By_Region_Boxplot), and Table\ \@ref(tabDemographics_By_Region_Table).
+
 
 
