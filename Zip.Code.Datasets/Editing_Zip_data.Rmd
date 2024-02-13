@@ -12,8 +12,15 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*.
 
 ```{r loading-data}
+# Load necessary libraries
+library(tidyverse)
+library(psych)
+library(stats)
+library(lme4)
+library(scales)
 
-loading_zipdata <- "~/repos/Diversity-Richness/Zip.Code.Datasets/zip_data_unedited_nolabels.csv" #making a pathway to the downloaded census data
+loading_zipdata <- "~/repos/Diversity-Richness/Zip.Code.Datasets/zip_data_unedited_nolabels.csv" 
+#making a pathway to the downloaded census data
 Unedited_zipdata <- read.csv(loading_zipdata) #loading the census data
 
 ```
@@ -22,7 +29,8 @@ Unedited_zipdata <- read.csv(loading_zipdata) #loading the census data
 reduced_collumns_zip <- c(1:2, 33:34, 42, 47:146) #removing unnecessary columns
 
 
-Zipcode_Census_data<- Unedited_zipdata[ , reduced_collumns_zip] #make a new table without unnecessary columns
+Zipcode_Census_data<- Unedited_zipdata[ , reduced_collumns_zip] 
+#make a new table without unnecessary columns
 
 colnames(Zipcode_Census_data) <- c("FIPS", "Name", "3_Digit_Tabulation", "5_Digit_Tabulation" , "Area_Name","Total_Population", "Population_Density", "Area", "Total_Population1", "Total_Population_Male", "Total_Population_Female", "X_Total_Population_Male", "X_Total_Population_Female", "Total_Population2", "Total_Population_Under_5_Years", "Total_Population_5_to_9_Years", "Total_Population_10_to_14_Years", "Total_Population_15_to_17_Years", "Total_Population_18_to_24_Years", "Total_Population_25_to_34_Years", "Total_Population_35_to_44_Years", "Total_Population_45_to_54_Years", "Total_Population_55_to_64_Years", "Total_Population_65_to_74_Years", "Total_Population_75_to_84_Years", "Total_Population_85_Years_And_Over","X_Total_Population_Under_5_Years", "X_Total_Population_5_to_9_Years", "X_Total_Population_10_to_14_Years", "X_Total_Population_15_to_17_Years", "X_Total_Population_18_to_24_Years", "X_Total_Population_25_to_34_Years", "X_Total_Population_35_to_44_Years", "X_Total_Population_45_to_54_Years", "X_Total_Population_55_to_64_Years", "X_Total_Population_65_to_74_Years", "X_Total_Population_75_to_84_Years", "X_Total_Population_85_Years_And_Over", "Total_Population3", "Total_Population_White_Alone", "Total_Population_Black_or African_American_Alone", "Total_Population_American_Indian_And_Native_Alaskan_Alone", "Total_Population_Asian_Alone", "Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "Total_Population_Some_Other_Race_Alone","Total_Population_Two_Or_More_Races","X_Total_Population_White_Alone", "X_Total_Population_Black_or_African_American_Alone", "X_Total_Population_American_Indian_And_Native_Alaskan_Alone", "X_Total_Population_Asian_Alone", "X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "X_Total_Population_Some_Other_Race_Alone","X_Total_Population_Two_Or_More_Races","Households","Households_Family_Households","Households_Married_Couple_Family","Households_Other_Family","Households_Male_Householder_No_Wife_Present","Households_Female_Householder_No_Husband_Present","Households_Nonfamily_Households","Nonfamily_Households_Male_Householder","Nonfamily_Households_Female_Householder","X_Households_Family_Households","X_Households_Married_Couple_Family","X_Households_Other_Family","X_Households_Male_Householder_No_Wife_Present","X_Households_Female_Householder_No_Husband_Present","X_Households_Nonfamily_Households","X_Nonfamily_Households_Male_Householder","X_Nonfamily_Households_Female_Householder","Median_Household_Income","Housing_Units","Occupied_Housing_Units","Owner_Occupied","Renter_Occupied","X_Owner_Occupied","X_Renter_Occupied","Population_With_Poverty_Status","Poverty_Status_Under_1.00","Poverty_Status_1.00_to_1.99","Poverty_Status_Under_2.00","Poverty_Status_2.00_and_Over","X_Poverty_Status_Under_1.00","X_Poverty_Status_1.00_to_1.99","X_Poverty_Status_Under_2.00","X_Poverty_Status_2.00_and_Over", "Total_Population_Last", "Total_Not_Hispanic", "Total_Not_Hispanic_White_Alone", "Total_Not_Hispanic_Black_Alone", "Total_Not_Hispanic_American_Indian_Native_Alaskan_Alone","Total_Not_Hispanic_Asian_Alone","Total_Not_Hispanic_Native_Hawaiian_Pacific_Islander","Total_Not_Hispanic_Other_Race","Total_Not_Hispanic_Two_or_More_Races", "Total_Hispanic","X_Not_Hispanic", "X_Not_Hispanic_White_Alone", "X_Not_Hispanic_Black_Alone", "X_Not_Hispanic_American_Indian_Native_Alaskan_Alone","X_Not_Hispanic_Asian_Alone","X_Not_Hispanic_Native_Hawaiian_Pacific_Islander","X_Not_Hispanic_Other_Race","X_Not_Hispanic_Two_or_More_Races", "X_Hispanic")
 
@@ -33,42 +41,16 @@ colnames(Zipcode_Census_data) <- c("FIPS", "Name", "3_Digit_Tabulation", "5_Digi
 ```
 
 ```{r saving_Zipcode_Census_data}
-write.csv(Zipcode_Census_data, file = "~/repos/Diversity-Richness/Zip.Code.Datasets/Zipcode_Census_data.csv", row.names = FALSE)
+write.csv(Zipcode_Census_data, file = "~/repos/Diversity-Richness/Zip.Code.Datasets/Zipcode_Census_data.csv", 
+          row.names = FALSE)
 #saving the table as a csv file
 ```
 
-```{r first-attmept-income-plot}
-library(tidyverse)
-library(ggplot2)
-
-values <- c("Percent White" = "red","Percent African American" = "blue",  "Percent Asian" = "green", "Percent Native American" = "purple", "Percent Hispanic" = "yellow")
-text_needed <-
-"Percent White = RED 
-Percent African American = BLUE 
-Percent Asian = GREEN 
-Percent Native American = PURPLE 
-Percent Hispanic = YELLOW"
-
-Zipcode_Census_data %>%
-  group_by()
 
 
 
-ggplot(Zipcode_Census_data) +
-  geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income), fill ="white", color = "red", show.legend = T) +
-  geom_smooth(aes(x = X_Total_Population_Black_or_African_American_Alone, y = Median_Household_Income), fill = "white", color = "blue", show.legend = T) +
-  geom_smooth(aes(x = X_Total_Population_Asian_Alone, y = Median_Household_Income), fill = "white", color = "green", show.legend = T) +
-  geom_smooth(aes(x = X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = Median_Household_Income), fill = "white", color = "purple", show.legend = T) +
-  geom_smooth(aes(x = X_Hispanic, y = Median_Household_Income), fill = "white", color = "yellow", show.legend = T) +
-  labs(x = "Percentage Population of Population for Each Racial Demgraphic", y = "Median Household Income",
-         title = "Racial Demographics and Median Household Income", caption = text_needed) +
-  theme_classic()
-#May want to add further descriptors or learn how to add multiple lines
 
-
-```
-(ref:Income_By_Racial_Demographic_Figure) Income By Racial Demographic Figure
-```{r race-income-plot,fig.cap= "(ref:Income_By_Racial_Demographic_Figure)"}
+```{r Smooth-Plot-Income-Race, fig.cap= "Race-Income Plot"}
 library(tidyverse)
 library(ggplot2)
 
@@ -86,6 +68,9 @@ ggplot(Zipcode_Census_data) +
 #Don't know how to correct red shading on key
 
 ```
+
+
+
 
 ```{r lm-plot}
 
@@ -106,34 +91,21 @@ ggplot(Zipcode_Census_data) +
 
 ```
 
-```{r Whiteness-Income-Smooth-Plot}
-library(tidyverse)
-library(ggplot2)
-
-ggplot(Zipcode_Census_data) +
-  geom_jitter(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income), fill ="black", color = "#ffd4c4") + #made a jitter plot first so it not cover
-   geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income), fill ="#ffb5e2", color = "#ce70e8" ) + #then added smooth plot to track trend
-  labs(x = "Percentage Population White", y = "Median Household Income",
-         title = "Whiteness and Median Household Income", caption = "Data: Zipcode_Census_data")
-#May want to add further descriptors or learn how to add multiple lines
-
-```
 
 ```{r Making_ZipCode_Categories}
 Zipcode_with_Zones <- Zipcode_Census_data %>%
   mutate(Zipcode_Zone= case_when(
    substr(Name, 7, 8) == "00" ~ "Puerto Rico",
-   substr(Name, 7, 7) == "0" ~ "North East",
-    substr(Name, 7, 7) == "1" ~ "New York Region (Lower North East)",
-    substr(Name, 7, 7) == "2" ~ "Central East Coast",
-    substr(Name, 7, 7) == "3" ~ "South East",
-    substr(Name, 7, 7) == "4" ~ "Great Lakes",
-    substr(Name, 7, 7) == "5" ~ "Northern Midwest",
-    substr(Name, 7, 7) == "6" ~ "Central Interior",
-    substr(Name, 7, 7) == "7" ~ "Texas Region",
-    substr(Name, 7, 7) == "8" ~ "Western Interior",
-    substr(Name, 7, 7) == "9" ~ "West Coast (and Hawaii/Alaska)",
-    substr(Name, 7, 8) == "00" ~ "Puerto Rico",
+   substr(Name, 7, 7) == "0" ~ "North East (Around MA)",
+    substr(Name, 7, 7) == "1" ~ "Lower North East (Arond NY)",
+    substr(Name, 7, 7) == "2" ~ "Central East Coast (Around VA)",
+    substr(Name, 7, 7) == "3" ~ "South East (Around FL)",
+    substr(Name, 7, 7) == "4" ~ "Great Lakes (Around MI)",
+    substr(Name, 7, 7) == "5" ~ "Northern Midwest (Around MN)",
+    substr(Name, 7, 7) == "6" ~ "Central Interior (Around IL)",
+    substr(Name, 7, 7) == "7" ~ "Central South (Around TX)",
+    substr(Name, 7, 7) == "8" ~ "Western Interior (Around CO)",
+    substr(Name, 7, 7) == "9" ~ "West Coast (includes Hawaii/Alaska)",
     TRUE ~ "Other"  # Default case
   ), .after = Area_Name)
   
@@ -204,8 +176,8 @@ write.csv(Zipcode_with_States, file = "~/repos/Diversity-Richness/Zip.Code.Datas
 ```
 
 
-(ref:Whiteness_By_Region_Boxplot) Whiteness By Region Boxplot
-```{r Race-income-Box-plot, fig.cap="(ref:Whiteness_By_Region_Boxplot)"}
+
+```{r Whiteness-Income-Boxplot, fig.cap="(ref:Whiteness-Income-Boxplot-Caption)"}
 
 # Create the boxplot
 ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Alone, fill = Zipcode_Zone)) +
@@ -219,9 +191,9 @@ ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Al
 
 
 
-(ref:Demographics_By_Region_Table) Demographics By Region Table
+(ref:ZIP-Region-Table-Caption) ZIP Region Table.
 
-```{r ZIP_Region_Table, fig.cap="(ref:Demographics_By_Region_Table)"}
+```{r ZIP-Region-Table}
 
 
 
@@ -240,11 +212,11 @@ Zipcode_with_States %>%
     sd.percent.hispanic = sd(X_Hispanic, na.rm = T),
     n.per.region = n()
   ) %>%
-  knitr::kable(col.names = c("ZIP Code Region", "Percent White",	"SD White",	"Percent Black",	"SD Black",	"Percent Asian", "SD Asian", "Percent Native Americn", "SD Native American", "Percent Hispanic", "SD Hispanic", "ZIP Codes Per Region"), 
+  knitr::kable("latex", col.names = c("Region", "% White",	"SD White",	"% Black",	"SD Black",	"% Asian", "SD Asian", "% Native Americn", "SD Native American", "% Hispanic", "SD Hispanic", "ZIP Codes Per Region"), 
                digits = 2, 
                align = "lrlrlrlrlrlr",
                caption = "Average ZIP Code Demographics by Region") %>%
- kableExtra::kable_styling(position = "left", latex_options = c("scale_down", "hold_position")) %>%
+ kableExtra::kable_styling(position = "left", latex_options = "scale_down") %>%
   kableExtra::column_spec(seq(2, 12, 2), bold = TRUE)
 
 
@@ -252,7 +224,79 @@ Zipcode_with_States %>%
 #struggling with captioning and referencing
 ```
 
-I will now refer to Figure\ \@ref(fig:Income_By_Racial_Demographic_Figure), Figure\ \@ref(figWhiteness_By_Region_Boxplot), and Table\ \@ref(tabDemographics_By_Region_Table).
+I will now refer to "Figure\ \@ref(fig:Smooth-Plot-Income-Race)" , Figure \@ref(fig:Smooth-Plot-Income-Race), Figure \@ref(fig:Race-Income Plot), Figure\ \@ref(fig:Race-Income Plot)
 
 
+Descriptive Chunk: 
+
+```{r}
+library(papaja)
+Census.desc <- Zipcode_with_States %>% 
+  select(X_Total_Population_White_Alone, Median_Household_Income) %>% 
+  drop_na()
+
+Census.desc.long <- Census.desc %>% 
+  pivot_longer(c(X_Total_Population_White_Alone, Median_Household_Income), names_to = "measure")
+
+Census.desc.long %>% 
+  group_by(measure) %>%
+  summarize(mean = mean(value),
+         median = median(value),
+         sd = sd(value),
+         first_quartile = quantile(value, probs = c(.25)),
+         third_quartile = quantile(value, probs = c(.75)),
+         range = diff(range(value))) %>%
+  apa_table()
+  
+   
+  
+```
+
+Hypothesis Testing: Whiteness/Income
+
+```{r whiteness-income-corr}
+whiteness_income_corr <- cor(Census.desc)
+(whiteness_income_corr_simple <- cor(Census.desc[ ,1], Census.desc[ ,2]))
+
+whiteness_income_corr2 <- corr.test(Census.desc) #run corr
+whiteness_income_corr2$p.adj
+
+
+```
+
+```{r whiteness-income-plot}
+ggplot(Zipcode_Census_data) +
+  geom_jitter(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income), fill ="black", color = "#ffd4c4") + #made a jitter plot first so it not cover
+   geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income), fill ="#ffb5e2", color = "#ce70e8", method = "lm" ) + #then added smooth plot to track trend
+  labs(x = "Percentage Population White", y = "Median Household Income",
+         title = "Whiteness and Median Household Income", caption = "Data: Zipcode_Census_data")
+```
+
+```{r}
+corrplot::corrplot(whiteness_income_corr)
+```
+
+
+```{r t test homogenius zip codes}
+Census_desc2 <- Zipcode_with_States %>%
+  select("X_Total_Population_White_Alone", "X_Total_Population_Black_or_African_American_Alone", "X_Total_Population_American_Indian_And_Native_Alaskan_Alone", "X_Total_Population_Asian_Alone", "X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "Median_Household_Income", "Zipcode_Zone", "State_Territory") %>% 
+  drop_na()
+
+less_diversity_ttest <- t.test(
+       filter(Census_desc2, X_Total_Population_White_Alone >= 75)$Median_Household_Income,
+       filter(Census_desc2, X_Total_Population_White_Alone <= 75)$Median_Household_Income)
+
+high_income_ttest
+```
+
+```{r}
+
+asian_westcoast_test <- t.test(
+       filter(Census_desc2, X_Total_Population_Asian_Alone >= 50, Zipcode_Zone == "West Coast (includes Hawaii/Alaska)")$Median_Household_Income,
+       filter(Census_desc2, X_Total_Population_White_Alone <= 50, Zipcode_Zone == "West Coast (includes Hawaii/Alaska)")$Median_Household_Income)
+
+high_income_ttest
+
+
+```
 
