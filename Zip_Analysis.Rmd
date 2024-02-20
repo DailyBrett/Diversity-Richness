@@ -1,31 +1,101 @@
 ---
-title: "Editting Data"
-output:
-  pdf_document: default
-  html_notebook: default
-  html_document:
-    df_print: paged
+title             : "The title"
+shorttitle        : "Title"
+
+author: 
+  - name          : "First Author"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Postal address"
+    email         : "my@email.com"
+    role: # Contributorship roles (e.g., CRediT, https://credit.niso.org/)
+      - "Conceptualization"
+      - "Writing - Original Draft Preparation"
+      - "Writing - Review & Editing"
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1,2"
+    role:
+      - "Writing - Review & Editing"
+      - "Supervision"
+
+affiliation:
+  - id            : "1"
+    institution   : "Wilhelm-Wundt-University"
+  - id            : "2"
+    institution   : "Konstanz Business School"
+
+authornote: |
+  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+  Enter author note here.
+
+abstract: |
+  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
+  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
+  One sentence clearly stating the **general problem** being addressed by  this particular study.
+  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
+  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
+  One or two sentences to put the results into a more **general context**.
+  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+  
+  <!-- https://tinyurl.com/ybremelq -->
+  
+keywords          : "keywords"
+wordcount         : "X"
+
+bibliography      : "r-references.bib"
+
+floatsintext      : no
+linenumbers       : yes
+draft             : no
+mask              : no
+
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+
+classoption       : "man"
+output            : papaja::apa6_pdf
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*.
-
-```{r loading-data}
+```{r setup, include = FALSE}
+library("papaja")
 # Load necessary libraries
 library(tidyverse)
 library(psych)
 library(stats)
 library(lme4)
 library(scales)
-library(jtools)
-library(broom)
+library(tinytex)
+r_refs("r-references.bib")
+```
 
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+
+
+# Methods
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+
+## Participants
+
+## Material
+
+## Procedure
+
+## Data analysis
+
+```{r}
 loading_zipdata <- "~/repos/Diversity-Richness/Zip.Code.Datasets/zip_data_unedited_nolabels.csv" 
 #making a pathway to the downloaded census data
 Unedited_zipdata <- read.csv(loading_zipdata) #loading the census data
 
 ```
+
 
 ```{r editting-orignal-data}
 reduced_collumns_zip <- c(1:2, 33:34, 42, 47:146) #removing unnecessary columns
@@ -284,7 +354,6 @@ Census_desc2 <- Zipcode_with_States %>%
   select("X_Total_Population_White_Alone", "X_Total_Population_Black_or_African_American_Alone", "X_Total_Population_American_Indian_And_Native_Alaskan_Alone", "X_Total_Population_Asian_Alone", "X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "Median_Household_Income", "Zipcode_Zone", "State_Territory") %>% 
   drop_na()
 
-
 less_diversity_ttest <- t.test(
        filter(Census_desc2, X_Total_Population_White_Alone >= 75)$Median_Household_Income,
        filter(Census_desc2, X_Total_Population_White_Alone <= 75)$Median_Household_Income)
@@ -303,26 +372,16 @@ asian_westcoast_test
 
 ```
 
-```{r Model 1}
-
-(income_race_model <- lm(data = Census_desc2, Median_Household_Income ~ X_Total_Population_White_Alone))
-(income_race_model_sum <- summary(income_race_model))
-
-income_race_tidy <- tidy(income_race_model)
-```
-
-In Model 1, which includes just one independent variable 
-(`Median_Household_Income ~ X_Total_Population_White_Alone`), 
-the percentage of the ZIP Code population that is white is positively associated with median household income ($\beta$ = `r round(coefficients(income_race_model)[["X_Total_Population_White_Alone"]], 3)`, $p$ < `r coefficients(income_race_model_sum)[[2, 4]]` ). The Intercept, or approximated mean of median household income if the percent white were were zero, is \$ `r format((round(coefficients(income_race_model)[["(Intercept)"]], 2)), scientific = FALSE)` , and for every additional unit of percent of the population white, we expect an increase of \$ `r round(coefficients(income_race_model)[["X_Total_Population_White_Alone"]], 3)`. (Additionally, it is important to note that the Intercept is different than the mean median household income for all ZIP Codes \$ `r format(mean(Census_desc2$Median_Household_Income), scientific = FALSE)` .) Therefore, if we increased percent white by one unit that manner, we would expect the mean ZIP Code median household income to increase to \$ `r format((round(coefficients(income_race_model)[["(Intercept)"]], 2)) + (round(coefficients(income_race_model)[["X_Total_Population_White_Alone"]], 2)),  scientific = FALSE)` . Additionally, Model 1 shows a very singifcant relationship between percent of the population white and median household income (`r apa_p(income_race_tidy$p.value[2])`) indicating a strong association between the two variables. 
 
 
+# Results
+
+# Discussion
 
 
+\newpage
 
+# References
 
-
-`r coefficients(income_race_model)[["(Intercept)"]]`
-
-
-
-
+::: {#refs custom-style="Bibliography"}
+:::
