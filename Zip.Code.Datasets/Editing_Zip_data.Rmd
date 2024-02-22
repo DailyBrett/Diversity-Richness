@@ -179,7 +179,7 @@ write.csv(Zipcode_with_States, file = "~/repos/Diversity-Richness/Zip.Code.Datas
 
 
 
-```{r Whiteness-Income-Boxplot, fig.cap="(ref:Whiteness-Income-Boxplot-Caption)"}
+```{r whiteness-income-boxplot, fig.cap="(ref:Whiteness-Income-Boxplot-Caption)"}
 
 # Create the boxplot
 ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Alone, fill = Zipcode_Zone)) +
@@ -190,6 +190,8 @@ ggplot(Zipcode_with_Zones, aes(x = Zipcode_Zone, y = X_Total_Population_White_Al
 
 
 ```
+
+
 
 
 
@@ -225,6 +227,9 @@ Zipcode_with_States %>%
 #for some reason scale down is not working
 #struggling with captioning and referencing
 ```
+
+\@ref(fig:plot-primary-results)
+
 
 I will now refer to "Figure\ \@ref(fig:Smooth-Plot-Income-Race)" , Figure \@ref(fig:Smooth-Plot-Income-Race), Figure \@ref(fig:Race-Income Plot), Figure\ \@ref(fig:Race-Income Plot)
 

@@ -1,0 +1,7 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Richness-Diversity-Markdown_files/figure-latex/race-median-income-fig-1.pdf}
+\caption{\label{fig:race-median-income-fig}ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic}
+\end{figure*}
