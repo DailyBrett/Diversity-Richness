@@ -20,41 +20,44 @@ author:
 
 affiliation:
   - id            : "1"
-    institution   : "The University of Chicagi"
-  - id            : "2"
-    institution   : "Konstanz Business School"
+    institution   : "The University of Chicago"
 
 authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
-
-  Enter author note here.
+  Please email bnpeterson@uchicago.edu for questions about this important research.
 
 abstract: |
   One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
-  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
-  One sentence clearly stating the **general problem** being addressed by  this particular study.
-  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
-  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
-  One or two sentences to put the results into a more **general context**.
-  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
   
-  <!-- https://tinyurl.com/ybremelq -->
-  
+
 keywords          : "keywords"
-wordcount         : "X"
 
 bibliography      : "new-r-references.bib"
 
-floatsintext      : no
-linenumbers       : yes
-draft             : no
-mask              : no
-
+floatsintext      : yes
 figurelist        : no
 tablelist         : no
 footnotelist      : no
+linenumbers       : no
+mask              : no
+draft             : no
+numbersections    : yes
 
-classoption       : "man"
+header-includes:
+  - |
+    \makeatletter
+    \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+      {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+      {-1em}%
+      {\normalfont\normalsize\bfseries\typesectitle}}
+    
+    \renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+      {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+      {-\z@\relax}%
+      {\normalfont\normalsize\bfseries\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+    \makeatother
+
+csl               : "`r system.file('rmd', 'apa7.csl', package = 'papaja')`"
+documentclass     : "apa7"
 output            : papaja::apa6_pdf
 ---
 
@@ -70,6 +73,7 @@ library(broom)
 library(tidyverse)
 library(ggplot2)
 library(readr)
+library(tinytex)
 r_refs("new-r-references.bib")
 ```
 
@@ -93,12 +97,12 @@ In order to address this central question regarding diversity and psychological 
 
 ## Constrict Theory: A Direct Challenge to Well-being
 First, understanding the impact of diversity on the different members within a community is vital for understanding how it might impact individual well-being. In his landmark research findings on diversity, 
-@putnamPluribusUnumDiversity2007 finally addressed the on-going debate between the contact and conflict theories of diversity by presenting extensive data supporting a new model, known as the “constrict theory” of social capital (p. 144). Rather than either decreasing racial animosity [@allportNaturePrejudiceGordon1954; @brownChildhoodCrossethnicExposure2021; @duboisPhiladelphiaNegroSocial1899; @sigelmanContactHypothesisRevisited1993; @stoufferAmericanSoldierAdjustment1949] or increasing a sense of outgroup threat [@enosCausalEffectIntergroup2014; @enosWhatDemolitionPublic2016; @gilesPowerApproachIntergroup1986; @herbertblumerRacePrejudiceSense1958], Putnam found that diversity actually has this “constricting” effect where increasing diversity actually lowers trust for both in-group and out-group communities which leads to greater social isolation and overall weaker social capital [@putnamPluribusUnumDiversity2007, p. 144, 149-150]. Based on Putnam’s research regarding the constrict theory, therefore, one could reasonably assume that greater diversity may lead to lower overall well-being since happiness and meaning, two of the primary factors in well-being, are both connected to social support and connecting to something greater than one’s self [@oishiPsychologicallyRichLife2022, p. 791-792]. In fact, @sederEthnicRacialHomogeneity2009 actually found this type of diversity effect when conducting research that demonstrated university students with more homogenous friendship networks on Facebook actually scored higher on life satisfaction and positive feelings than those with more heterogenous networks (p. 443). Similar results were also found both by @florezUnderstandingMeaningRacial2019 who demonstrated that higher levels of meaning are associated with higher degrees of prejudice and by @elnakouriHateMeaningLife2022 [, p. 5] who demonstrated that collective hate towards a group, as opposed to individual hate towards a specific person often produced higher meaning in life. Therefore, based on the preponderance of the current research on diversity and its impact on well-being, one might reasonably assume that living within a diverse community would reduce overall well-being. 
+@putnamPluribusUnumDiversity2007 finally addressed the on-going debate between the contact and conflict theories of diversity by presenting extensive data supporting a new model, known as the “constrict theory” of social capital (p. 144). Rather than either decreasing racial animosity [@allportNaturePrejudiceGordon1954; @brownChildhoodCrossethnicExposure2021; @duboisPhiladelphiaNegroSocial1899; @sigelmanContactHypothesisRevisited1993; @stoufferAmericanSoldierAdjustment1949] or increasing a sense of outgroup threat [@enosCausalEffectIntergroup2014; @enosWhatDemolitionPublic2016; @gilesPowerApproachIntergroup1986; @herbertblumerRacePrejudiceSense1958], Putnam found that diversity actually has this “constricting” effect where increasing diversity actually lowers trust for both in-group and out-group communities which leads to greater social isolation and overall weaker social capital [@putnamPluribusUnumDiversity2007, p. 144, 149-150]. Based on Putnam’s research regarding the constrict theory, therefore, one could reasonably assume that greater diversity may lead to lower overall well-being since happiness and meaning, two of the primary factors in well-being, are both connected to social support and connecting to something greater than one’s self [@oishiPsychologicallyRichLife2022, p. 791-792]. In fact, @sederEthnicRacialHomogeneity2009e actually found this type of diversity effect when conducting research that demonstrated university students with more homogenous friendship networks on Facebook actually scored higher on life satisfaction and positive feelings than those with more heterogenous networks (p. 443). Similar results were also found both by  @florezUnderstandingMeaningRacial2019a who demonstrated that higher levels of meaning are associated with higher degrees of prejudice and by @elnakouriHateMeaningLife2022a[, p. 5] who demonstrated that collective hate towards a group, as opposed to individual hate towards a specific person often produced higher meaning in life. Therefore, based on the preponderance of the current research on diversity and its impact on well-being, one might reasonably assume that living within a diverse community would reduce overall well-being. 
 
 ## A Potential Answer: Psychological Richness
 While portions of the current literature may appear to present a negative view of diversity at first glance, however, there are also substantive reasons to believe that this may not be the full picture. The current literature on diversity does convincingly demonstrate that increased diversity likely reduces happiness and meaning in certain circumstances, but these are not the only two factors that contribute to well-being. Oishi and Westgate provide compelling evidence that the current framework of human well-being should be expanded beyond happiness and meaning, to also include psychological richness, a third vital and distinct element of living a good life [@oishiPsychologicallyRichLife2022, p. 790]. While happiness is associated with stability and satisfaction, and meaning with a greater purpose, psychological richness on the other hand is defined by a sense of experiencing perspective-changing exploration that contributes to living a good life [@oishiPsychologicallyRichLife2022, p. 790]. In this manner, psychological richness is often associated with an openness to new experiences, an awareness that one’s perspective is not definitive or universal, a higher penchant for creativity and narrative complexity, and also a willingness to consider challenging experiences rewarding even if difficult [@oishiPsychologicallyRichLife2022, p. 790, 794, 797-798, 804]. Because of these different causes and features, it is possible that psychological richness may have a different relationship with diversity than either happiness or meaning. Therefore, since past studies have only focused on the relationship between diversity and these first two components of well-being, it also remains possible that the current literature on diversity has unintentionally presented an overly negative portrayal of diversity by not considering how it may impact psychological richness as well. 
 
-Additionally, there are reasons to believe that psychological richness, unlike happiness and meaning, is positively correlated with diversity based on the current literature. First, political liberalism, a factor commonly associated with racial openness, is instead highly related to psychological richness [@oishiExperiencesAssociatedPsychological2021, p. 755]. Second, psychological richness has proven to be more resistant to challenges and traumatic events than either happiness or meaning, so it is possible that the different challenges inherent in increasing diversity may not affect psychological richness in the same way as its counterparts [@oishiPsychologicallyRichLife2022, p. 804-804]. Finally, while a link between diversity and psychological richness has yet to be definitively proven, the current research has demonstrated that certain experiences which involve increased exposure to diversity, such as studying abroad, do in fact increase rates of psychological richness while not having a similar impact on happiness or meaning @oishiPsychologicallyRichLife2022, p. 797]. Based on the substantive evidence of the current literature on psychological richness, therefore, there are substantial reasons to believe that psychological richness, unlike happiness and meaning, may actually have a positive causal relationship with increased racial diversity. 
+Additionally, there are reasons to believe that psychological richness, unlike happiness and meaning, is positively correlated with diversity based on the current literature. First, political liberalism, a factor commonly associated with racial openness, is instead highly related to psychological richness [@oishiExperiencesAssociatedPsychological2021, p. 755]. Second, psychological richness has proven to be more resistant to challenges and traumatic events than either happiness or meaning, so it is possible that the different challenges inherent in increasing diversity may not affect psychological richness in the same way as its counterparts [@oishiPsychologicallyRichLife2022, p. 804-804]. Finally, while a link between diversity and psychological richness has yet to be definitively proven, the current research has demonstrated that certain experiences which involve increased exposure to diversity, such as studying abroad, do in fact increase rates of psychological richness while not having a similar impact on happiness or meaning [@oishiPsychologicallyRichLife2022, p. 797]. Based on the substantive evidence of the current literature on psychological richness, therefore, there are substantial reasons to believe that psychological richness, unlike happiness and meaning, may actually have a positive causal relationship with increased racial diversity. 
 
 
 # Methods
@@ -117,7 +121,7 @@ Zipcode_data_with_Regions_States <- read_csv("~/repos/Diversity-Richness/Zip.Cod
 
 ```
 
-```{r race-median-income-fig, fig.cap="ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic"}
+```{r race-median-income-smooth-fig, fig.cap="ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic", warning=FALSE}
 
 ggplot(Zipcode_data_with_Regions_States) +
   geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income, color = "#A1C9F4"), fill ="grey", alpha = 0.2, show.legend = T)  +
@@ -131,11 +135,49 @@ ggplot(Zipcode_data_with_Regions_States) +
   labs(x = "Percentage Population of Population for Each Racial Demgraphic", y = "Median Household Income", title = "Racial Demographics and Median Household Income")
 ```
 
+This is to check whether I can finally reference Figure \@ref(fig:race-median-income-smooth-fig).
 
-This is to check whether I can finally reference Figure \@ref(fig:race-median-income-fig)
+
+```{r race-median-income-lm-fig, fig.cap="ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic", warning=FALSE}
+ggplot(Zipcode_data_with_Regions_States) +
+  geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income, color = "#A1C9F4"), fill ="grey", alpha = 0.2, show.legend = T, method = "lm", se =T)  +
+  geom_smooth(aes(x = X_Total_Population_Black_or_African_American_Alone, y = Median_Household_Income, color = "#FFB482"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se =T) +
+  geom_smooth(aes(x = X_Total_Population_Asian_Alone, y = Median_Household_Income, color = "#8DE5A1"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se = T) +
+  geom_smooth(aes(x = X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = Median_Household_Income, color = "#D0BBFF"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se = T) +
+  geom_smooth(aes(x = X_Hispanic, y = Median_Household_Income, color = "#FF9F9B"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se =T) +
+  scale_color_manual(values = c( "#8DE5A1" = "#8DE5A1","#A1C9F4" = "#A1C9F4","#D0BBFF" = "#D0BBFF", "#FF9F9B" = "#FF9F9B", "#FFB482" = "#FFB482"),
+                     name = "Race",
+                     labels = c("Asian", "White", "Native American/Alaskan", "Hispanic", "Black")) +
+  labs(x = "Percentage Population of Population for Each Racial Demographic", y = "Median Household Income", title = "Racial Demographics and Median Household Income")
+```
+
+This is to check whether I can finally reference Figure \@ref(fig:race-median-income-lm-fig).
+
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
+
+```{r data-wrangle1}
+Census_data_reduced <- Zipcode_data_with_Regions_States %>%
+  select("X_Total_Population_White_Alone", "X_Total_Population_Black_or_African_American_Alone", "X_Total_Population_American_Indian_And_Native_Alaskan_Alone", "X_Total_Population_Asian_Alone", "X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "Median_Household_Income", "Zipcode_Zone", "State_Territory") %>% 
+  drop_na()
+
+```
+
+
+```{r Model1-basiclm}
+income_race_model1 <- lm(data = Census_data_reduced, Median_Household_Income ~ X_Total_Population_White_Alone)
+income_race_model_sum1 <- summary(income_race_model1)
+
+income_race_tidy1 <- tidy(income_race_model1)
+```
+
+In Model 1, which includes just one independent variable  (`Median_Household_Income ~ X_Total_Population_White_Alone`), the percentage of the ZIP Code population that is white is positively associated with median household income ($\beta$ = `r round(coefficients(income_race_model1)[["X_Total_Population_White_Alone"]], 3)`, $p$ < `r coefficients(income_race_model_sum1)[[2, 4]]`). The Intercept, or approximated mean of median household income if the percent white were were zero, is \$`r format((round(coefficients(income_race_model1)[["(Intercept)"]], 2)), scientific = FALSE)`, and for every additional unit of percent of the population white, we expect an increase of \$`r round(coefficients(income_race_model1)[["X_Total_Population_White_Alone"]], 3)`. (Additionally, it is important to note that the Intercept is different than the mean median household income for all ZIP Codes \$`r format(mean(Census_data_reduced$Median_Household_Income), scientific = FALSE)`.) Therefore, if we increased percent white by one unit that manner, we would expect the mean ZIP Code median household income to increase to \$`r format((round(coefficients(income_race_model1)[["(Intercept)"]], 2)) + (round(coefficients(income_race_model1)[["X_Total_Population_White_Alone"]], 2)),  scientific = FALSE)`. Additionally, Model 1 shows a very significant relationship between percent of the population white and median household income (`r apa_p(income_race_tidy1$p.value[2])`) indicating a strong association between the two variables. 
+
+
+
+
+
+We used `r cite_r("new-r-references.bib")` for all our analyses.
 
 
 # Results
