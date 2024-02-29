@@ -1,0 +1,14 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Richness-Diversity-Markdown_files/figure-latex/race-median-income-smooth-fig-1.pdf}
+\caption{\label{fig:race-median-income-smooth-fig}ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Richness-Diversity-Markdown_files/figure-latex/race-median-income-lm-fig-1.pdf}
+\caption{\label{fig:race-median-income-lm-fig}ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic}
+\end{figure*}
