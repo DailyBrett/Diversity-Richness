@@ -1,6 +1,6 @@
 ---
-title             : "A Diverse Happiness for a Diversifing World: The Relationship between Community-level Racial Diversity and Psycholoigcal Richness"
-shorttitle        : "A Diverse Happiness for a Diversifing World"
+title             : "A Diverse Well-Being for a Diversifing World: The Relationship between Community-level Racial Diversity and Psycholoigcal Richness"
+shorttitle        : "A Diverse Well-Being for a Diversifing World"
 
 author: 
   - name          : "Brett Neely Peterson"
@@ -12,11 +12,6 @@ author:
       - "Conceptualization"
       - "Writing - Original Draft Preparation"
       - "Writing - Review & Editing"
-  - name          : "Ernst-August Doelle"
-    affiliation   : "1,2"
-    role:
-      - "Writing - Review & Editing"
-      - "Supervision"
 
 affiliation:
   - id            : "1"
@@ -26,10 +21,10 @@ authornote: |
   Please email bnpeterson@uchicago.edu for questions about this important research.
 
 abstract: |
-  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
+  Iin light of both the increasing diversification in the modern wolrd and the often mixed responses to it, it is especially valuable to understand how living within a diverse community impacts individual well-being. However, the relationship between diversity and psychological richness, a vital component of human well-being, has largely gone unexplored up to this point. Therefore, this paper will seek to address this question of how living within a racially diverse community affects individual levels of psychological richness through a series of studies in this area. 
   
 
-keywords          : "keywords"
+keywords          : "Diversity, Well-Being, Happiness, Psychological Richness, Socio-ecological Psychology"
 
 bibliography      : "new-r-references.bib"
 
@@ -62,6 +57,9 @@ output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
+chooseCRANmirror(ind=65)
+library(Require)
+Require("stargazer")
 library("papaja")
 library(tidyverse)
 library(psych)
@@ -74,6 +72,7 @@ library(tidyverse)
 library(ggplot2)
 library(readr)
 library(tinytex)
+library(jtools)
 r_refs("new-r-references.bib")
 ```
 
@@ -83,7 +82,13 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-# Literature Review
+```{r loading_data, warning=FALSE}
+
+Zip_Richness_Diversity <- read_csv("~/repos/Diversity-Richness/Thesis-Analysis/Edited_Richness_ZIP_Mockdata.csv")
+
+```
+
+# Introduction
 
 
 ## A Diversifying World
@@ -104,109 +109,282 @@ While portions of the current literature may appear to present a negative view o
 
 Additionally, there are reasons to believe that psychological richness, unlike happiness and meaning, is positively correlated with diversity based on the current literature. First, political liberalism, a factor commonly associated with racial openness, is instead highly related to psychological richness [@oishiExperiencesAssociatedPsychological2021, p. 755]. Second, psychological richness has proven to be more resistant to challenges and traumatic events than either happiness or meaning, so it is possible that the different challenges inherent in increasing diversity may not affect psychological richness in the same way as its counterparts [@oishiPsychologicallyRichLife2022, p. 804-804]. Finally, while a link between diversity and psychological richness has yet to be definitively proven, the current research has demonstrated that certain experiences which involve increased exposure to diversity, such as studying abroad, do in fact increase rates of psychological richness while not having a similar impact on happiness or meaning [@oishiPsychologicallyRichLife2022, p. 797]. Based on the substantive evidence of the current literature on psychological richness, therefore, there are substantial reasons to believe that psychological richness, unlike happiness and meaning, may actually have a positive causal relationship with increased racial diversity. 
 
+## Research Approach
+Overall, the existing literature on racial diversity, human well-being, and psychological richness indicates a current need to conduct further research on the question of whether living within a diverse or ethnically heterogeneous community leads to a higher degree of psychological richness. In order to achieve this goal, this paper is proposing three studies where community-level rates of diversity will serve as the independent variable and individual levels of  psychological richness will serve as the dependent variable. Additionally, these three studies will address different scale and types of communities to explore how this diversity effect might manifest both in large scale communities and in smaller social networks. The first two studies will address H1 by examining adult participants and the diversity levels in their ZIP Codes (*Study 1*) and then by attempting to confirm these findings using a proxy measure for psychological richness with a larger sample size of adults (*Study 2*). Then, the final study (*Study 3*) will aim to address H2 by conducting a survey study where psychological richness will be evaluated based on the racial diversity of one’s friendship network and on the types of activities one participates in with one’s friends. 
 
 # Methods
+
+First, *Study* 1 will focus on determining whether living within US ZIP Code areas with higher levels of racial diversity is correlated with higher rates of individual psychological richness. In this manner, this study will examine whether simply living within a community or geographic area with increased racial diversity has a potential impact on psychological richness. In order to measure community-level diversity, *Study 1* will specifically utilize ZIP Code demographic data as ZIP Codes are large enough geographic areas to measure for a community effect that extends beyond one’s immediate social network and yet are so large to include communal dynamics unlikely to affect the individual. Additionally, several similar studies have demonstrated that ZIP Code level demographics are far more likely to have an effect on individual personality traits and measures than large geographic areas, such as city or state level demographics [@ellemanSmallerBetterAssociations2020].  
+
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
 ## Participants
+```{r av-participant, warning=FALSE}
+participant_counts <- table(Zip_Richness_Diversity$walkscore_city_name)
 
-## Material
+average_participants_per_city <- sum(participant_counts) / length(participant_counts)
+```
+
+To measure this potential ZIP Code effect, a large sample of roughly `r length(Zip_Richness_Diversity$ResponseId)` adults from `r length(unique(Zip_Richness_Diversity$walkscore_city_name))` different cities and s have been recruited from MTurk, with an average of `r round(average_participants_per_city)` participants from each city. Additionally,within this pool of participants, roughly `r length(unique(Zip_Richness_Diversity$geo_zipcode))` different ZIP Codes are represented. By utilizing such a large group of participants from across the US, Study 1 will both seek to establish a relationship between diversity and richness as well as provide insight into what areas of the United States score higher on psychological richness. 
+
+## Measures
+
+Each participant will then be asked a series of demographic questions, including their ZIP Code of residence, administered the Psychologically Rich Life Questionnaire, a measure which highly correlated with individual levels of psychological richness, along with the Happiness and Meaning Questionnaires, and then given a psychological richness score based on their responses [@oishiPsychologicallyRichLife2019]. 
 
 ## Procedure
 
-
-```{r loading_data}
-
-Zip_Richness_Diversity <- read_csv("~/repos/Diversity-Richness/Thesis-Analysis/Edited_Richness_ZIP_Mockdata.csv")
-
-```
-
-```{r}
-ggplot(Zip_Richness_Diversity) +
-  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = SWLS), alpha = 0.2, show.legend = T) 
-  
-  
-```
-
-
-```{r}
-ggplot(Zip_Richness_Diversity) +
-  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ), alpha = 0.5, show.legend = T) 
-```
-
-
-```{r}
-ggplot(Zip_Richness_Diversity) +
-  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ), alpha = 0.5, show.legend = T, method = "lm", se =T)
-
-```
-
-
-
-
-
-```{r race-median-income-smooth-fig, fig.cap="ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic", warning=FALSE}
-
-ggplot(Zip_Richness_Diversity) +
-  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ, color = "#A1C9F4"), fill ="grey", alpha = 0.2, show.legend = T)  +
-  geom_smooth(aes(x = ZIP_X_Total_Population_Black_or_African_American_Alone, y = PRLQ, color = "#FFB482"), fill = "grey", alpha = 0.2, show.legend = T) + #Fixed shading
-  geom_smooth(aes(x = ZIP_X_Total_Population_Asian_Alone, y = PRLQ, color = "#8DE5A1"), fill = "grey", alpha = 0.2, show.legend = T) +
-  geom_smooth(aes(x = ZIP_X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = PRLQ, color = "#D0BBFF"), fill = "grey", alpha = 0.2, show.legend = T) +
-  geom_smooth(aes(x = ZIP_X_Hispanic, y = PRLQ, color = "#FF9F9B"), fill = "grey", alpha = 0.2, show.legend = T) +
-  scale_color_manual(values = c( "#8DE5A1" = "#8DE5A1","#A1C9F4" = "#A1C9F4","#D0BBFF" = "#D0BBFF", "#FF9F9B" = "#FF9F9B", "#FFB482" = "#FFB482"), #Fixed order
-                     name = "Race",
-                     labels = c("Asian", "White", "Native American/Alaskan", "Hispanic", "Black")) +
-  labs(x = "Percentage Population of Population for Each Racial Demgraphic", y = "Median Household Income", title = "Racial Demographics and Median Household Income")
-```
-
-This is to check whether I can finally reference Figure \@ref(fig:race-median-income-smooth-fig).
-
-
-```{r race-median-income-lm-fig, fig.cap="ZIP Code Median Household Income by Percentage of the Poluation of Each Demgraphic", warning=FALSE}
-ggplot(Zipcode_data_with_Regions_States) +
-  geom_smooth(aes(x = X_Total_Population_White_Alone, y = Median_Household_Income, color = "#A1C9F4"), fill ="grey", alpha = 0.2, show.legend = T, method = "lm", se =T)  +
-  geom_smooth(aes(x = X_Total_Population_Black_or_African_American_Alone, y = Median_Household_Income, color = "#FFB482"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se =T) +
-  geom_smooth(aes(x = X_Total_Population_Asian_Alone, y = Median_Household_Income, color = "#8DE5A1"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se = T) +
-  geom_smooth(aes(x = X_Total_Population_American_Indian_And_Native_Alaskan_Alone, y = Median_Household_Income, color = "#D0BBFF"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se = T) +
-  geom_smooth(aes(x = X_Hispanic, y = Median_Household_Income, color = "#FF9F9B"), fill = "grey", alpha = 0.2, show.legend = T, method = "lm", se =T) +
-  scale_color_manual(values = c( "#8DE5A1" = "#8DE5A1","#A1C9F4" = "#A1C9F4","#D0BBFF" = "#D0BBFF", "#FF9F9B" = "#FF9F9B", "#FFB482" = "#FFB482"),
-                     name = "Race",
-                     labels = c("Asian", "White", "Native American/Alaskan", "Hispanic", "Black")) +
-  labs(x = "Percentage Population of Population for Each Racial Demographic", y = "Median Household Income", title = "Racial Demographics and Median Household Income")
-```
-
-This is to check whether I can finally reference Figure \@ref(fig:race-median-income-lm-fig).
+These scores will then need to be compared to a measure of the independent variable, ZIP Code-level racial diversity, to determine whether there is any correlation between higher diversity and higher psychological diversity. Then, each participant will then be given a diversity score based on the measure of the ZIP Code where they live, and these racial diversity scores will be compared to their psychological richness scores, while controlling for confounding factors such as gender, age, and SES, to determine if there is any correlation between higher ZIP Code-level diversity and higher psychological richness
 
 
 ## Data analysis
 
-```{r data-wrangle1}
-Census_data_reduced <- Zipcode_data_with_Regions_States %>%
-  select("X_Total_Population_White_Alone", "X_Total_Population_Black_or_African_American_Alone", "X_Total_Population_American_Indian_And_Native_Alaskan_Alone", "X_Total_Population_Asian_Alone", "X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "Median_Household_Income", "Zipcode_Zone", "State_Territory") %>% 
+This study will be utilizing the data provided by the U.S. Census Bureau on ZIP Code racial demographics in the  “American Community Survey ACS 2017-2021 (5-Year Estimates)”, as it provides some of the largest, most accurate, and most wide-used data on racial composition across the US [@CensusBureauQuickFacts]. This US Census Bureau data on the population sizes of different racial groups in each ZIP Code will then by quantified using a measure similar to the “ethnolinguistic fractionalization” formula employed by many scholars on diversity, which measures the percent chance that two people of different races would be selected if randomly pulled from the ZIP Code’s population [@easterlyAfricaGrowthTragedy1997; @montalvoChapter18Cultural2014]. We then used a variety of `R` packages[^1] to organize our data and run our analyses. 
+
+[^1]: `r cite_r("new-r-references.bib")`
+
+# Results
+
+
+(ref:a-path-caption) Scatterplot demonstrating relationship the relationship between racial homogeneity in a Participant's ZIP Code and the participant's meaning in life scores.
+```{r a-path-scatterplot, fig.cap="(ref:a-path-caption)", echo=FALSE, fig.pos='H', out.width='100%', warning=FALSE}
+ggplot(Zip_Richness_Diversity) +
+  geom_jitter(aes(x = ZIP_X_Total_Population_White_Alone, y = SWLS), fill = "#B3D1F8", color = "#A1C9F4", alpha = 0.2) +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = SWLS), fill = "#A1C9F4", color = "darkblue", alpha = 0.5, show.legend = T) + 
+  labs(x = "Percentage Population White", y = "Happiness Score",
+         title = "Homogeneity and Happiness", caption = "Data: Census Burea; Oishi Lab") + 
+  theme_apa() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 10)) + 
+  scale_x_continuous(breaks = seq(from = 0, to = 100, by = 25)) + 
+  scale_y_continuous(breaks = seq(from = 0, to = 10, by = 2.5))
+  
+  
+```
+```{r happy-corr, warning=FALSE}
+div_happ_correlation <- corr.test(
+  x = Zip_Richness_Diversity$ZIP_X_Total_Population_White_Alone,
+  y = Zip_Richness_Diversity$SWLS)
+```
+
+
+
+Figure\ \@ref(fig:a-path-scatterplot) demonstrates ($r$ = `r div_happ_correlation$r`)
+
+
+
+(ref:b-path-caption) Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's meaning in life scores.
+```{r b-path-scatterplot, fig.cap="(ref:b-path-caption)", echo=FALSE, fig.pos='H', out.width='100%', warning=FALSE}
+ggplot(Zip_Richness_Diversity) +
+  geom_jitter(aes(x = ZIP_X_Total_Population_White_Alone, y = MLQ_P), fill = "#A1F5B6", color = "#A1F5B6", alpha = 0.2) +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = MLQ_P), fill = "#8DE5A1", color = "darkgreen",alpha = 0.4, show.legend = T) + 
+  labs(x = "Percentage Population White", y = "Meaning Score",
+         title = "Homogeneity and Meaning", caption = "Data: Census Burea; Oishi Lab") +
+   theme_apa()  +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 10)) + 
+  scale_x_continuous(breaks = seq(from = 0, to = 100, by = 25)) + 
+  scale_y_continuous(breaks = seq(from = 0, to = 10, by = 2.5))
+
+```
+```{r meaning-corr, warning=FALSE}
+div_meaning_correlation <- corr.test(
+  x = Zip_Richness_Diversity$ZIP_X_Total_Population_White_Alone,
+  y = Zip_Richness_Diversity$MLQ_P)
+
+```
+
+
+
+Figure\ \@ref(fig:b-path-scatterplot) demonstrates  ($r$ = `r div_meaning_correlation$r`)
+
+(ref:c-path-caption) Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's psychological richness scores.
+```{r c-path-scatterplot, fig.cap="(ref:c-path-caption)", echo=FALSE, fig.pos='H', out.width='100%', warning=FALSE}
+ggplot(Zip_Richness_Diversity) +
+  geom_jitter(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ), fill = "#E8D9FF", color = "#E8D9FF", alpha = 0.2) +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ), color = "#800080", fill = "#D0BBFF", alpha = 0.4, show.legend = T) + 
+  labs(x = "Percentage Population White", y = "Psychological Richness Score",
+         title = "Homogeneity and Psychological Richness Score", caption = "Data: Census Burea; Oishi Lab") + 
+  theme_apa() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 10)) + 
+  scale_x_continuous(breaks = seq(from = 0, to = 100, by = 25)) + 
+  scale_y_continuous(breaks = seq(from = 0, to = 10, by = 2.5))
+```
+```{r rich-corr, warning=FALSE}
+div_rich_correlation <- corr.test(
+  x = Zip_Richness_Diversity$ZIP_X_Total_Population_White_Alone,
+  y = Zip_Richness_Diversity$PRLQ)
+```
+
+
+
+
+Figure\ \@ref(fig:c-path-scatterplot) demonstrates  ($r$ = `r div_rich_correlation$r`)
+
+
+
+(ref:d-path-caption) Smooth plot comparing the relationships between the percentage of a participant's ZIP Code that is white and each of the three well-being measures. 
+```{r d-path-smooth, fig.cap = "(ref:d-path-caption)", echo=FALSE, fig.pos='H', out.width='100%', warning=FALSE}
+
+ggplot(Zip_Richness_Diversity) +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = SWLS, color = "#A1C9F4"), fill ="#A1C9F4", alpha = 0.2, show.legend = T)  +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = MLQ_P, color = "#8DE5A1"), fill = "#8DE5A1", alpha = 0.2, show.legend = T) +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ, color = "#D0BBFF"), fill = "#D0BBFF", alpha = 0.2, show.legend = T) +
+  scale_color_manual(values = c( "#A1C9F4" = "#A1C9F4","#8DE5A1" = "#8DE5A1","#D0BBFF" = "#D0BBFF"), #Fixed order
+                     name = "Types of Well-Being",
+                     labels = c("Happiness", "Meaning", "Psychological Richness")) +
+  labs(x = "Percentage Population White", y = "Well-Being Scores",
+         title = "Homogeneity and the Three Dimensions of Well-Being", caption = "Data: Census Burea; Oishi Lab") + 
+  theme_apa()
+  
+```
+
+Figure\ \@ref(fig:d-path-smooth) demonstrates 
+
+
+(ref:e-path-caption) Box plot comparing the relationships between the region particpants were from and their psychological richness scores. 
+```{r e-path-box, fig.cap = "(ref:e-path-caption)", echo=FALSE, fig.pos='H', out.width='100%', warning=FALSE}
+ggplot(Zip_Richness_Diversity, aes(x = ZIP_Zipcode_Zone, y = PRLQ, fill = ZIP_Zipcode_Zone)) +
+  geom_boxplot(outlier.shape = NA) +
+  labs(x = "ZIP Code Zones", y = "Psych Ricness Score",
+       title = "Percentage of Population White by Zip Code Region", fill = "ZIP Code Regions") +
+  theme_apa() +
+  theme(axis.text.x = element_blank())
+  
+
+
+```
+
+Figure\ \@ref(fig:e-path-box) demonstrates
+
+
+```{r editing-zone-name, warning=FALSE}
+Zip_Richness_Diversity_short_zone <- Zip_Richness_Diversity %>%
+  mutate(ZIP_Zipcode_Zone = str_replace(ZIP_Zipcode_Zone, "\\(.*\\)", ""))
+```
+
+
+(ref:f-path-caption) Smooth plot comparing the relationships between community whiteness and individual psychological richness based on the region particpants were from. 
+```{r f-path-smooth, fig.cap = "(ref:f-path-caption)", echo=FALSE, fig.pos='H', out.width='100%', warning=FALSE}
+ggplot(Zip_Richness_Diversity_short_zone) +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ, color = ZIP_Zipcode_Zone), alpha = 0.4, method = "lm", se =T) + 
+  labs(x = "Percentage Population White", y = "Psychological Richness Score",
+         title = "Homogeneity and Psychological Richness Score", caption = "Data: Census Burea; Oishi Lab") + 
+  theme_apa() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(4, 7)) + 
+  scale_x_continuous(breaks = seq(from = 0, to = 100, by = 25)) + 
+  scale_y_continuous(breaks = seq(from = 4, to = 7, by = 1)) + 
+  facet_wrap(vars(ZIP_Zipcode_Zone), nrow = 2) + 
+  theme(legend.position = "none", strip.text = element_text(size = 8, margin = margin(t = 4, b = 4, l = 4, r = 4)))
+```
+
+Figure\ \@ref(fig:f-path-smooth) demonstrates
+
+
+(ref:g-path-caption) Smooth plot comparing the relationships between community whiteness and individual psychological richness based on the degree of racial segregation in one's community.
+```{r g-path-smooth, fig.cap = "(ref:g-path-caption)", echo=FALSE, fig.pos='H', out.width='100%', warning=FALSE}
+ggplot(Zip_Richness_Diversity_short_zone) +
+  geom_smooth(aes(x = ZIP_X_Total_Population_White_Alone, y = PRLQ, color = Segregation_Category), alpha = 0.4, method = "lm", se =T) + 
+  labs(x = "Percentage Population White", y = "Psychological Richness Score",
+         title = "Psychological Richness Effect Based on Integration", caption = "Data: Census Burea; Oishi Lab") + 
+  theme_apa() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 10)) + 
+  scale_x_continuous(breaks = seq(from = 0, to = 100, by = 25)) + 
+  scale_y_continuous(breaks = seq(from = 0, to = 10, by = 2.5)) + 
+  facet_wrap(vars(Segregation_Category), nrow = 2) + 
+  theme(legend.position = "none", strip.text = element_text(size = 8, margin = margin(t = 4, b = 4, l = 4, r = 4)))
+```
+
+
+
+Figure\ \@ref(fig:g-path-smooth) demonstrates
+
+
+```{r data-wrangle-for-lm, warning=FALSE}
+Zip_Richness_Diversity_reduced <- Zip_Richness_Diversity %>%
+  select("ResponseId", "geo_zipcode", "SWLS", "MLQ_P", "PRLQ", "walkscore_walkscore", "walkscore_transitscore", "walkscore_bikescore", "walkscore_city_name", "mobility_score", "Segregation_Divergence_Score", "Segregation_Category", "ZIP_X_Total_Population_Female", "ZIP_Median_Household_Income", "ZIP_Population_Density", "ZIP_Total_Population", "ZIP_Zipcode_Zone", "ZIP_X_Total_Population_White_Alone", "ZIP_X_Total_Population_Black_or_African_American_Alone", "ZIP_X_Total_Population_American_Indian_And_Native_Alaskan_Alone", "ZIP_X_Total_Population_Asian_Alone", "ZIP_X_Total_Population_Native_Hawaiian_And_Other_Pacific_Islander_Alone", "ZIP_Median_Household_Income", "ZIP_Zipcode_Zone", "ZIP_State_Territory") %>% 
   drop_na()
 
 ```
 
 
-```{r Model1-basiclm}
-income_race_model1 <- lm(data = Census_data_reduced, Median_Household_Income ~ X_Total_Population_White_Alone)
-income_race_model_sum1 <- summary(income_race_model1)
 
-income_race_tidy1 <- tidy(income_race_model1)
+
+```{r compare-models, warning=FALSE}
+psych_rich_model1 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone)
+psych_rich_model1_sum <- summary(psych_rich_model1)
+happiness_model1 <-lm(data = Zip_Richness_Diversity_reduced, SWLS ~ ZIP_X_Total_Population_White_Alone)
+happiness_model1_sum <- summary(happiness_model1)
+meaning_model1 <-lm(data = Zip_Richness_Diversity_reduced, MLQ_P ~ ZIP_X_Total_Population_White_Alone)
+meaning_model1_sum <- summary(meaning_model1)
+
 ```
 
-In Model 1, which includes just one independent variable  (`Median_Household_Income ~ X_Total_Population_White_Alone`), the percentage of the ZIP Code population that is white is positively associated with median household income ($\beta$ = `r round(coefficients(income_race_model1)[["X_Total_Population_White_Alone"]], 3)`, $p$ < `r coefficients(income_race_model_sum1)[[2, 4]]`). The Intercept, or approximated mean of median household income if the percent white were were zero, is \$`r format((round(coefficients(income_race_model1)[["(Intercept)"]], 2)), scientific = FALSE)`, and for every additional unit of percent of the population white, we expect an increase of \$`r round(coefficients(income_race_model1)[["X_Total_Population_White_Alone"]], 3)`. (Additionally, it is important to note that the Intercept is different than the mean median household income for all ZIP Codes \$`r format(mean(Census_data_reduced$Median_Household_Income), scientific = FALSE)`.) Therefore, if we increased percent white by one unit that manner, we would expect the mean ZIP Code median household income to increase to \$`r format((round(coefficients(income_race_model1)[["(Intercept)"]], 2)) + (round(coefficients(income_race_model1)[["X_Total_Population_White_Alone"]], 2)),  scientific = FALSE)`. Additionally, Model 1 shows a very significant relationship between percent of the population white and median household income (`r apa_p(income_race_tidy1$p.value[2])`) indicating a strong association between the two variables. 
+
+```{r compare-wellbeing-regression, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
+
+stargazer(psych_rich_model1, happiness_model1, meaning_model1, title = "Well-being Measures Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Happiness", "Meaning"), covariate.labels = c("ZIP Code Percent White"), column.sep.width = "1pt", label = "tab:compare-wellbeing-regression", out="compare-wellbeing-regression.png")
+
+
+```
 
 
 
 
 
-We used `r cite_r("new-r-references.bib")` for all our analyses.
+```{r rich-control-models, warning=FALSE}
+
+psych_rich_model2 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone + ZIP_Zipcode_Zone)
+
+psych_rich_model3 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone + ZIP_X_Total_Population_Female)
+
+psych_rich_model4 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone + ZIP_X_Total_Population_Female + ZIP_Median_Household_Income)
+
+psych_rich_model5 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone + ZIP_X_Total_Population_Female + ZIP_Median_Household_Income + ZIP_Population_Density)
+
+psych_rich_model6 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone + ZIP_X_Total_Population_Female + ZIP_Median_Household_Income + ZIP_Population_Density + ZIP_Total_Population)
+
+psych_rich_model7 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone + ZIP_X_Total_Population_Female + ZIP_Median_Household_Income + ZIP_Population_Density + ZIP_Total_Population + mobility_score)
 
 
-# Results
+```
+
+
+```{r rich-control-regression, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
+stargazer(psych_rich_model1, psych_rich_model2, title = "Psych Richness Region Controls Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Region Controls"), covariate.labels = c("ZIP Code Percent White", "Central Interior", "Central South", "Great Lakes", "Lower North East", "North East", "Northern Midwest", "South East", "West Coast", "West Interior"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-control-regression", out="rich-control-regression.png")
+
+
+```
+
+```{r rich-control-regression2, echo=FALSE, results='asis', fig.pos='H', warning=FALSE}
+stargazer(psych_rich_model1, psych_rich_model3, psych_rich_model7, title = "Psych Richness ZIP Controls Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Gender Control", "ZIP Code Controls"), covariate.labels = c("ZIP Code Percent White", "Percent Female", "Median Household Income", "Population Density", "Total Population", "Mobility Score"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-control-regression2", out="rich-control-regression2.png")
+
+
+```
+
+```{r rich-interaction-models, fig.pos='H', warning=FALSE}
+psych_walkscore_interaction <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone*walkscore_walkscore)
+psych_mobility_interaction <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone*mobility_score)
+psych_segregation_interaction <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone*Segregation_Divergence_Score)
+```
+
+```{r rich-interaction-regression, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
+stargazer(psych_walkscore_interaction,
+          psych_segregation_interaction, title = "Psych Richness Interaction Regression", header = FALSE, type = 'latex', dep.var.labels = c("Richness-Walkability Interaction", "Richness-Segregation Interaction"), covariate.labels = c("ZIP Code Percent White", "Walkscore", "Whiteness:Walkscore", "Segregation", "Segregation:Walkscore", "Mobility Score"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-interaction-regression", out="rich-interaction-regression.png")
+```
+
+
+
+
+
+
+
 
 # Discussion
+
+
+
+
+*Study 1* also has several limitations though based on sample size and scale of community addressed. First, while 30 participants per city is a sufficiently large sample size, the strength of this sample may be slightly weakened when broken down on the ZIP Code level. Therefore, confirming any potential findings using a large-scale, frequently conducted values survey would be valuable for strengthening any claims about the relationship between diversity and richness. Additionally, while smaller than cities or states,  ZIP Codes are still quite large geographic areas for measuring a community affect since people are most directly shaped by their immediate surroundings. In this manner, even if a correlation between the diversity scores and the psychological richness scores is discovered, it would be unclear whether a potential effect was caused by broader community influences, interactions within one’s social network, or engaging in certain enriching activities that may be more common in diverse communities. Therefore, to address these limitations and more fully explore the relationship between diversity and richness, it is also important to test richness in a smaller-scale social network where there can be more confidence the participants are actually interacting with the diversity within their community.
+
+Despite these limitations, however, *Study 1* does provide several important contributions to understanding this relationship between diversity and psychological richness, including how diversity functions in communities (at the ZIP COde level) and how potential effects on happiness and psychological richness might compare to each other. In this manner, this research also provides the potential impetus for further study on diversity and overall well-being by addressing whether past studies possibly produced an overly negative portrayal of diversity by not also including psychological richness as a measure of well-being.
 
 
 \newpage

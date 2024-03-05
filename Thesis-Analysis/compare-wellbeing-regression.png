@@ -1,0 +1,29 @@
+
+\begin{table}[!htbp] \centering 
+  \caption{Well-being Measures Regression} 
+  \label{tab:compare-wellbeing-regression} 
+\begin{tabular}{@{\extracolsep{1pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & Psych Richness & Happiness & Meaning \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ ZIP Code Percent White & $-$0.006$^{**}$ & 0.009$^{***}$ & 0.013$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) \\ 
+  & & & \\ 
+ Constant & 5.742$^{***}$ & 5.048$^{***}$ & 4.921$^{***}$ \\ 
+  & (0.140) & (0.125) & (0.124) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 2,889 & 2,889 & 2,889 \\ 
+R$^{2}$ & 0.002 & 0.006 & 0.012 \\ 
+Adjusted R$^{2}$ & 0.002 & 0.005 & 0.012 \\ 
+Residual Std. Error (df = 2887) & 2.611 & 2.332 & 2.315 \\ 
+F Statistic (df = 1; 2887) & 5.400$^{**}$ & 16.024$^{***}$ & 35.134$^{***}$ \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

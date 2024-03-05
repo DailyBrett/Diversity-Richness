@@ -62,15 +62,21 @@ output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
-library("papaja")
+chooseCRANmirror(ind=65)
+library(Require)
+library(papaja)
 library(tidyverse)
 library(psych)
 library(stats)
+Require("diagram")
+Require("mediation")
+Require("stargazer")
+Require("mosaic")
+library(citr)
 library(lme4)
 library(scales)
 library(jtools)
 library(broom)
-library(tidyverse)
 library(ggplot2)
 library(readr)
 library(tinytex)

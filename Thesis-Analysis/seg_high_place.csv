@@ -1,0 +1,120 @@
+Rank,City,Divergence,Segregation Category
+1,"Detroit city, MI",0.806,High Segregation
+2,"Newark city, NJ",0.6806,High Segregation
+3,"Hialeah city, FL",0.654,High Segregation
+4,"Chicago city, IL",0.6223,High Segregation
+5,"Milwaukee city, WI",0.5936,High Segregation
+6,"Cleveland city, OH",0.5478,High Segregation
+7,"New York city, NY",0.4379,High Segregation
+8,"Irving city, TX",0.4082,High Segregation
+9,"Miami city, FL",0.4074,High Segregation
+10,"St. Louis city, MO",0.4069,High Segregation
+11,"Philadelphia city, PA",0.3974,High Segregation
+12,"Dallas city, TX",0.3968,High Segregation
+13,"Irvine city, CA",0.3876,High Segregation
+14,"Santa Ana city, CA",0.3762,High Segregation
+15,"Atlanta city, GA",0.363,High Segregation
+16,"Oakland city, CA",0.3572,High Segregation
+17,"Memphis city, TN",0.3453,High Segregation
+18,"Buffalo city, NY",0.3362,High Segregation
+19,"Baltimore city, MD",0.3335,High Segregation
+20,"Boston city, MA",0.3333,High Segregation
+21,"Fremont city, CA",0.3297,High Segregation
+22,"Washington city, DC",0.3295,High Segregation
+23,"New Orleans city, LA",0.3226,High Segregation
+24,"Houston city, TX",0.3187,High Segregation
+25,"Los Angeles city, CA",0.3088,High Segregation
+26,"Cincinnati city, OH",0.3006,High Segregation
+27,"Jersey City city, NJ",0.2953,High Segregation
+28,"St. Paul city, MN",0.2949,High Segregation
+29,"Orlando city, FL",0.2877,High Segregation
+30,"Baton Rouge city, LA",0.2817,High Segregation
+31,"Little Rock city, AR",0.2813,High Segregation
+32,"Richmond city, VA",0.2794,High Segregation
+33,"Tampa city, FL",0.2787,High Segregation
+34,"Kansas City city, MO",0.2754,High Segregation
+35,"Frisco city, TX",0.2743,High Segregation
+36,"Plano city, TX",0.2689,High Segregation
+37,"Indianapolis city (balance), IN",0.2538,High Segregation
+38,"Chula Vista city, CA",0.2522,High Segregation
+39,"San Diego city, CA",0.2514,High Segregation
+40,"Phoenix city, AZ",0.2429,High Segregation
+41,"Charlotte city, NC",0.2347,High Segregation
+42,"St. Petersburg city, FL",0.2278,High Segregation
+43,"Scottsdale city, AZ",0.2241,High Segregation
+44,"Fort Worth city, TX",0.2232,High Segregation
+45,"Omaha city, NE",0.2229,High Segregation
+46,"Yonkers city, NY",0.2207,High Segregation
+47,"Huntsville city, AL",0.2206,High Segregation
+48,"Minneapolis city, MN",0.2206,High Segregation
+49,"Pittsburgh city, PA",0.2195,High Segregation
+50,"Rochester city, NY",0.2182,High Segregation
+51,"Montgomery city, AL",0.2135,High Segregation
+52,"Oklahoma City city, OK",0.2119,High Segregation
+53,"Tulsa city, OK",0.2118,High Segregation
+54,"Columbus city, OH",0.2088,High Segregation
+55,"Long Beach city, CA",0.2077,High Segregation
+56,"Greensboro city, NC",0.2055,High Segregation
+57,"Nashville-Davidson metropolitan government (balance), TN",0.203,High Segregation
+58,"Denver city, CO",0.1971,High Segregation
+59,"Columbus city, GA",0.1893,High Segregation
+60,"North Las Vegas city, NV",0.1888,High Segregation
+61,"Raleigh city, NC",0.1878,High Segregation
+62,"Norfolk city, VA",0.1858,High Segregation
+63,"San Jose city, CA",0.1852,High Segregation
+64,"Winston-Salem city, NC",0.1851,High Segregation
+65,"Garland city, TX",0.1811,High Segregation
+66,"San Francisco city, CA",0.1797,High Segregation
+67,"Louisville/Jefferson County metro government (balance), KY",0.1783,High Segregation
+68,"Aurora city, CO",0.1756,Low-Medium Segregation
+69,"Sacramento city, CA",0.1731,Low-Medium Segregation
+70,"Jacksonville city, FL",0.1705,Low-Medium Segregation
+71,"McKinney city, TX",0.1698,Low-Medium Segregation
+72,"Durham city, NC",0.1686,Low-Medium Segregation
+73,"Amarillo city, TX",0.1678,Low-Medium Segregation
+74,"San Bernardino city, CA",0.1673,Low-Medium Segregation
+75,"Toledo city, OH",0.1661,Low-Medium Segregation
+76,"Austin city, TX",0.1613,Low-Medium Segregation
+77,"Fort Wayne city, IN",0.161,Low-Medium Segregation
+78,"Lubbock city, TX",0.1572,Low-Medium Segregation
+79,"Fontana city, CA",0.153,Low-Medium Segregation
+80,"Augusta-Richmond County consolidated government (balance), GA",0.151,Low-Medium Segregation
+81,"Arlington city, TX",0.15,Low-Medium Segregation
+82,"Glendale city, AZ",0.1487,Low-Medium Segregation
+83,"Virginia Beach city, VA",0.1487,Low-Medium Segregation
+84,"Wichita city, KS",0.1485,Low-Medium Segregation
+85,"Las Vegas city, NV",0.144,Low-Medium Segregation
+86,"San Antonio city, TX",0.1411,Low-Medium Segregation
+87,"Tucson city, AZ",0.1406,Low-Medium Segregation
+88,"Stockton city, CA",0.1402,Low-Medium Segregation
+89,"Anaheim city, CA",0.14,Low-Medium Segregation
+90,"Bakersfield city, CA",0.1318,Low-Medium Segregation
+91,"Fresno city, CA",0.1289,Low-Medium Segregation
+92,"Des Moines city, IA",0.1284,Low-Medium Segregation
+93,"Chandler city, AZ",0.1276,Low-Medium Segregation
+94,"Moreno Valley city, CA",0.1253,Low-Medium Segregation
+95,"Chesapeake city, VA",0.1181,Low-Medium Segregation
+96,"Lexington-Fayette urban county, KY",0.1166,Low-Medium Segregation
+97,"Mesa city, AZ",0.1146,Low-Medium Segregation
+98,"Tacoma city, WA",0.1135,Low-Medium Segregation
+99,"Henderson city, NV",0.1111,Low-Medium Segregation
+100,"Corpus Christi city, TX",0.1075,Low-Medium Segregation
+101,"Seattle city, WA",0.1043,Low-Medium Segregation
+102,"Worcester city, MA",0.0999,Low-Medium Segregation
+103,"Riverside city, CA",0.0967,Low-Medium Segregation
+104,"Albuquerque city, NM",0.0966,Low-Medium Segregation
+105,"Reno city, NV",0.0908,Low-Medium Segregation
+106,"Gilbert town, AZ",0.0879,Low-Medium Segregation
+107,"Fayetteville city, NC",0.0853,Low-Medium Segregation
+108,"Modesto city, CA",0.0812,Low-Medium Segregation
+109,"Madison city, WI",0.0812,Low-Medium Segregation
+110,"Anchorage municipality, AK",0.0775,Low-Medium Segregation
+111,"Portland city, OR",0.0683,Low-Medium Segregation
+112,"El Paso city, TX",0.0644,Low-Medium Segregation
+114,"Lincoln city, NE",0.0464,Low-Medium Segregation
+115,"Cape Coral city, FL",0.0379,Low-Medium Segregation
+116,"Boise City city, ID",0.0379,Low-Medium Segregation
+118,"Spokane city, WA",0.0219,Low-Medium Segregation
+119,"Laredo city, TX",0.0109,Low-Medium Segregation
+113,"Colorado Springs city, CO",0.0531,Integrated
+117,"Port St. Lucie city, FL",0.027,Integrated
