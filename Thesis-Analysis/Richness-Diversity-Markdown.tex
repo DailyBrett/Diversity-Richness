@@ -206,7 +206,7 @@ Correspondence concerning this article should be addressed to Brett Neely Peters
 \affiliation{\vspace{0.5cm}\textsuperscript{1} The University of Chicago}
 
 \abstract{%
-Iin light of both the increasing diversification in the modern wolrd and the often mixed responses to it, it is especially valuable to understand how living within a diverse community impacts individual well-being. However, the relationship between diversity and psychological richness, a vital component of human well-being, has largely gone unexplored up to this point. Therefore, this paper will seek to address this question of how living within a racially diverse community affects individual levels of psychological richness through a series of studies in this area.
+In light of both the increasing diversification in the modern wolrd and the often mixed responses to it, it is especially valuable to understand how living within a diverse community impacts individual well-being. However, the relationship between diversity and psychological richness, a vital component of human well-being, has largely gone unexplored up to this point. Therefore, this paper will seek to address this question of how living within a racially diverse community affects individual levels of psychological richness through a series of studies in this area.
 }
 
 
@@ -260,18 +260,22 @@ We report how we determined our sample size, all data exclusions (if any), all m
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
-To measure this potential ZIP Code effect, a large sample of roughly 3114 adults from 104 different cities and s have been recruited from MTurk,with at least 30 participants from each city. Additionally,within this pool of participants, roughly 1469 different ZIP Codes are represented.
+To measure this potential ZIP Code effect, a large sample of roughly 3114 adults from 104 different cities and s have been recruited from MTurk, with an average of 30 participants from each city. Additionally,within this pool of participants, roughly 1469 different ZIP Codes are represented. By utilizing such a large group of participants from across the US, Study 1 will both seek to establish a relationship between diversity and richness as well as provide insight into what areas of the United States score higher on psychological richness.
 
-\hypertarget{material}{%
-\subsection{Material}\label{material}}
+\hypertarget{measures}{%
+\subsection{Measures}\label{measures}}
+
+Each participant will then be asked a series of demographic questions, including their ZIP Code of residence, administered the Psychologically Rich Life Questionnaire, a measure which highly correlated with individual levels of psychological richness, along with the Happiness and Meaning Questionnaires, and then given a psychological richness score based on their responses (Oishi et al., 2019).
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
 
+These scores will then need to be compared to a measure of the independent variable, ZIP Code-level racial diversity, to determine whether there is any correlation between higher diversity and higher psychological diversity. Then, each participant will then be given a diversity score based on the measure of the ZIP Code where they live, and these racial diversity scores will be compared to their psychological richness scores, while controlling for confounding factors such as gender, age, and SES, to determine if there is any correlation between higher ZIP Code-level diversity and higher psychological richness
+
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
 
-We used a variety of \texttt{R} packages\footnote{R (Version 4.3.1; R Core Team, 2023) and the R-packages \emph{broom} (Version 1.0.5; Robinson et al., 2023), \emph{dplyr} (Version 1.1.4; Wickham, François, et al., 2023), \emph{forcats} (Version 1.0.0; Wickham, 2023a), \emph{ggplot2} (Version 3.4.3; Wickham, 2016), \emph{jtools} (Version 2.2.2; Long, 2022), \emph{lme4} (Version 1.1.35.1; Bates et al., 2015), \emph{lubridate} (Version 1.9.3; Grolemund \& Wickham, 2011), \emph{Matrix} (Version 1.6.1.1; Bates et al., 2023), \emph{papaja} (Version 0.1.1.9001; Aust \& Barth, 2023), \emph{psych} (Version 2.4.1; William Revelle, 2024), \emph{purrr} (Version 1.0.2; Wickham \& Henry, 2023), \emph{readr} (Version 2.1.4; Wickham, Hester, et al., 2023), \emph{Require} (Version 0.3.1; McIntire, 2023), \emph{scales} (Version 1.3.0; Wickham, Pedersen, et al., 2023), \emph{shiny} (Version 1.8.0; Chang et al., 2023), \emph{stargazer} (Version 5.2.3; Hlavac, 2022), \emph{stringr} (Version 1.5.1; Wickham, 2023b), \emph{tibble} (Version 3.2.1; Müller \& Wickham, 2023), \emph{tidyr} (Version 1.3.1; Wickham, Vaughan, et al., 2023), \emph{tidyverse} (Version 2.0.0; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.4; Barth, 2023), and \emph{tinytex} (Version 0.49; Xie, 2019)} to organize our data and run our analyses.
+This study will be utilizing the data provided by the U.S. Census Bureau on ZIP Code racial demographics in the ``American Community Survey ACS 2017-2021 (5-Year Estimates)'', as it provides some of the largest, most accurate, and most wide-used data on racial composition across the US (\emph{U.{S}. {Census Bureau QuickFacts}}, n.d.). This US Census Bureau data on the population sizes of different racial groups in each ZIP Code will then by quantified using a measure similar to the ``ethnolinguistic fractionalization'' formula employed by many scholars on diversity, which measures the percent chance that two people of different races would be selected if randomly pulled from the ZIP Code's population (Easterly \& Levine, 1997; Montalvo \& Reynal-Querol, 2014). We then used a variety of \texttt{R} packages\footnote{R (Version 4.3.1; R Core Team, 2023) and the R-packages \emph{broom} (Version 1.0.5; Robinson et al., 2023), \emph{citr} (Version 0.3.2; Aust, 2019), \emph{diagram} (Version 1.6.5; Soetaert, 2020), \emph{dplyr} (Version 1.1.4; Wickham, François, et al., 2023), \emph{forcats} (Version 1.0.0; Wickham, 2023a), \emph{ggformula} (Version 0.12.0; Kaplan \& Pruim, 2023), \emph{ggplot2} (Version 3.4.3; Wickham, 2016), \emph{jtools} (Version 2.2.2; Long, 2022), \emph{lattice} (Version 0.21.8; Sarkar, 2008), \emph{lme4} (Version 1.1.35.1; Bates et al., 2015), \emph{lubridate} (Version 1.9.3; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.60; Venables \& Ripley, 2002), \emph{Matrix} (Version 1.6.1.1; Bates et al., 2023), \emph{mediation} (Imai, Keele, \& Yamamoto, 2010; Imai, Keele, \& Tingley, 2010; Imai et al., 2011; Imai \& Yamamoto, 2013; Version 4.5.0; Tingley et al., 2014), \emph{mosaic} (Version 1.9.1; Pruim et al., 2017, 2023), \emph{mosaicData} (Version 0.20.4; Pruim et al., 2023), \emph{mvtnorm} (Version 1.2.4; Genz \& Bretz, 2009), \emph{papaja} (Version 0.1.1.9001; Aust \& Barth, 2023), \emph{psych} (Version 2.4.1; William Revelle, 2024), \emph{purrr} (Version 1.0.2; Wickham \& Henry, 2023), \emph{readr} (Version 2.1.4; Wickham, Hester, et al., 2023), \emph{Require} (Version 0.3.1; McIntire, 2023), \emph{sandwich} (Zeileis, 2004, 2006; Version 3.1.0; Zeileis et al., 2020), \emph{scales} (Version 1.3.0; Wickham, Pedersen, et al., 2023), \emph{shape} (Version 1.4.6.1; Soetaert, 2024), \emph{shiny} (Version 1.8.0; Chang et al., 2023), \emph{stargazer} (Version 5.2.3; Hlavac, 2022), \emph{stringr} (Version 1.5.1; Wickham, 2023b), \emph{tibble} (Version 3.2.1; Müller \& Wickham, 2023), \emph{tidyr} (Version 1.3.1; Wickham, Vaughan, et al., 2023), \emph{tidyverse} (Version 2.0.0; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.4; Barth, 2023), and \emph{tinytex} (Version 0.49; Xie, 2019)} to organize our data and run our analyses.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -279,26 +283,14 @@ We used a variety of \texttt{R} packages\footnote{R (Version 4.3.1; R Core Team,
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1} \caption{Scatterplot demonstrating relationship the relationship between racial homogeneity in a Participant's ZIP Code and the participant's meaning in life scores.}\label{fig:a-path-scatterplot}
+\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1} \caption{Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's psychological richness scores.}\label{fig:a-path-scatterplot}
 \end{figure}
 
-Figure~\ref{fig:a-path-scatterplot} demonstrates (\(r\) = 0.08)
 
 
 
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1} \caption{Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's meaning in life scores.}\label{fig:b-path-scatterplot}
-\end{figure}
 
-Figure~\ref{fig:b-path-scatterplot} demonstrates (\(r\) = 0.11)
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1} \caption{Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's psychological richness scores.}\label{fig:c-path-scatterplot}
-\end{figure}
-
-Figure~\ref{fig:c-path-scatterplot} demonstrates (\(r\) = -0.04)
+Figure~\ref{fig:a-path-scatterplot} demonstrates a moderate negative correlation significant (\(r\) = -0.04) between communal racial homogeneity (measured by the percentage of one's ZIP Code that is white) and participant's individual levels of psychological richness (as measure by their PRLQ score). While there is a lot of variation in the PRLQ scores due to the large sample size (\(n\) = 3114), Figure~\ref{fig:a-path-scatterplot} also illustrates how the standard error (\(se\) = .002) is fairly small. Therefore, the early correlation analysis seems to support \emph{H1} seems lower communal racial diversity seems to have an inverse relationship with psychological richness.
 
 
 
@@ -306,35 +298,12 @@ Figure~\ref{fig:c-path-scatterplot} demonstrates (\(r\) = -0.04)
 \includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1} \caption{Smooth plot comparing the relationships between the percentage of a participant's ZIP Code that is white and each of the three well-being measures.}\label{fig:d-path-smooth}
 \end{figure}
 
-Figure~\ref{fig:d-path-smooth} demonstrates
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/e-path-box-1} \caption{Box plot comparing the relationships between the region particpants were from and their psychological richness scores.}\label{fig:e-path-box}
-\end{figure}
-
-Figure~\ref{fig:e-path-box} demonstrates
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/f-path-smooth-1} \caption{Smooth plot comparing the relationships between community whiteness and individual psychological richness based on the region particpants were from.}\label{fig:f-path-smooth}
-\end{figure}
-
-Figure~\ref{fig:f-path-smooth} demonstrates
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1} \caption{Smooth plot comparing the relationships between community whiteness and individual psychological richness based on the degree of racial segregation in one's community.}\label{fig:g-path-smooth}
-\end{figure}
-
-Figure~\ref{fig:g-path-smooth} demonstrates
+Figure~\ref{fig:d-path-smooth} demonstrates how psychological richness's relationship with higher racial homogeneity contrasts with how the other two measures of well-being (happiness and meaning) relate to racial homogeneity. Meaning in life has a moderate positive correlation with the degree of racial homogeneity in a community (\(r\) = 0.11) which is further illustrated by Figure~\ref{fig:meaning-appendix} in Supplemental Material. Then, happiness or life satisfaction has an even stronger positive correlation with racial homogeneity in a community (\(r\) = 0.08) which is further illustrated by Figure~\ref{fig:happy-appendix} in the Supplemental Material.
 
 \begin{table}[!htbp] \centering 
   \caption{Well-being Measures Regression} 
   \label{tab:compare-wellbeing-regression} 
+\tiny 
 \begin{tabular}{@{\extracolsep{1pt}}lccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
@@ -360,6 +329,18 @@ F Statistic (df = 1; 2887) & 5.400$^{**}$ & 16.024$^{***}$ & 35.134$^{***}$ \\
 \textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
+
+In order to confirm the findings of the initial correlation analyses, We ran linear regression analysis on the relationships between ZIP Code Percentage White and each of the three well-being measures (PRLQ, SWLS, MLQ\_P) as demonstrated in Table~\ref{tab:compare-wellbeing-regression}. For each of the three well-being measure the relationship between ZIP Code Percentage White and itself was significant, with psychological richness having a significant negative relationship (PRLQ \(p\) = .020) and happiness and meaning both having negative significant relationships (SWLS \(p\) \textless{} .001, MLQ\_P \(p\) \textless{} .001). This regression analyses suggest, therefore, that not only does psychological richness have negative relationship with racial homogeneity, but also that its relationship differs from those of the other well-being measures as hypothesized.
+
+
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1} \caption{Smooth plot comparing the relationships between community whiteness and individual psychological richness based on the region particpants were from.}\label{fig:e-path-smooth}
+\end{figure}
+
+
+
+Despite the initial results of our regression models, it was still possible that this negative relationship between psychological richness and racial homogeneity might have been the result of some confounding variable. For example, the negative relationship could have largely been driven by one region of the country as Figure~\ref{fig:f-path-smooth} suggests stronger effect in the Lower North East Region despite Figure~\ref{fig:box-appendix} (check the Supplemental Materials) indicating that psychological richness is mostly stable across regions.
 
 \begin{table}[!htbp] \centering 
   \caption{Psych Richness Region Controls Regression} 
@@ -463,6 +444,16 @@ F Statistic & 5.400$^{**}$ (df = 1; 2887) & 4.909$^{***}$ (df = 2; 2886) & 2.087
 \end{tabular} 
 \end{table}
 
+Therefore, we ran regression models with a variety of potentially compounding variables. As demonstrated in Table~\ref{tab:rich-control-regression}, after controlling based on region we found no significant relationships besides of ZIP Code Percent White (\(p\) = .005). Additionally, after controlling for a variety of other potentially confounding variables (as demonstrated in Table~\ref{tab:rich-control-regression2}), the only other variable with a signifcant relationship was gender (\(p\) = .023).
+
+
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1} \caption{Smooth plot comparing the relationships between community whiteness and individual psychological richness based on the degree of racial segregation in one's community.}\label{fig:g-path-smooth}
+\end{figure}
+
+While the relationship between psychological richness and racial homogeneity continued to hold after controlling for a variety of factors, it still remained possible that possible that the relationship between the two might be especially significant in certain circumstances. For example, one might imagine that racial diversity might have a particularly large effect if the community is more racially integrated or if the community is especially walkable as it would provide more opportunites for interaction. Figure~\ref{fig:g-path-smooth} seems to suggest that their might be such as interaction effect between racial integration and racial homogeneity as the integrated communities show a stronger correlation.
+
 \begin{table}[!htbp] \centering 
   \caption{Psych Richness Interaction Regression} 
   \label{tab:rich-interaction-regression} 
@@ -490,7 +481,7 @@ F Statistic & 5.400$^{**}$ (df = 1; 2887) & 4.909$^{***}$ (df = 2; 2886) & 2.087
  Segregation:Walkscore &  & 0.006 \\ 
   &  & (0.014) \\ 
   & & \\ 
- Mobility Score & 5.464$^{***}$ & 5.965$^{***}$ \\ 
+ Constant & 5.464$^{***}$ & 5.965$^{***}$ \\ 
   & (0.280) & (0.275) \\ 
   & & \\ 
 \hline \\[-1.8ex] 
@@ -505,8 +496,14 @@ F Statistic (df = 3; 2885) & 2.357$^{*}$ & 2.254$^{*}$ \\
 \end{tabular} 
 \end{table}
 
+Therefore, we ran regression analyses on the interaction between ZIP Code Percent White and walk score as well as the interaction between ZIP Code Percent White and segregation score. As Table~\ref{tab:rich-interaction-regression} demonstrates, neither of the interaction terms had significant effect, and the only variable that carried significance was once again ZIP Code Percent White (\(p\) = .076). The significant interaction Figure~\ref{fig:g-path-smooth} seemed to suggest was actually the results of there being a very small number of cities in this study falling under the ``Integrated'' category (only 1), as there are relatively few large racially integrated cities in the US. Therefore, further research should be done that includes more racially integrated cites to verify if the interaction is significant or not. However, there are relatively few large racially integrated cities in the United States, so such work may be difficult in the US context.
+
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
+
+\emph{Study 1} also has several limitations though based on sample size and scale of community addressed. First, while 30 participants per city is a sufficiently large sample size, the strength of this sample may be slightly weakened when broken down on the ZIP Code level. Therefore, confirming any potential findings using a large-scale, frequently conducted values survey would be valuable for strengthening any claims about the relationship between diversity and richness. Additionally, while smaller than cities or states, ZIP Codes are still quite large geographic areas for measuring a community affect since people are most directly shaped by their immediate surroundings. In this manner, even if a correlation between the diversity scores and the psychological richness scores is discovered, it would be unclear whether a potential effect was caused by broader community influences, interactions within one's social network, or engaging in certain enriching activities that may be more common in diverse communities. Therefore, to address these limitations and more fully explore the relationship between diversity and richness, it is also important to test richness in a smaller-scale social network where there can be more confidence the participants are actually interacting with the diversity within their community.
+
+Despite these limitations, however, \emph{Study 1} does provide several important contributions to understanding this relationship between diversity and psychological richness, including how diversity functions in communities (at the ZIP COde level) and how potential effects on happiness and psychological richness might compare to each other. In this manner, this research also provides the potential impetus for further study on diversity and overall well-being by addressing whether past studies possibly produced an overly negative portrayal of diversity by not also including psychological richness as a measure of well-being.
 
 \newpage
 
@@ -517,6 +514,9 @@ F Statistic (df = 3; 2885) & 2.357$^{*}$ & 2.254$^{*}$ \\
 \begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-allportNaturePrejudiceGordon1954}{}}%
 Allport, G. W. (1897.-1967). A. (1954). \emph{The nature of prejudice / {Gordon W}. {Allport}}. Addison-Wesley Publishing Company.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-citr}{}}%
+Aust, F. (2019). \emph{Citr: 'RStudio' add-in to insert markdown citations}. \url{https://github.com/crsh/citr}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-papaja}{}}%
 Aust, F., \& Barth, M. (2023). \emph{{papaja}: {Prepare} reproducible {APA} journal articles with {R Markdown}}. \url{https://github.com/crsh/papaja}
@@ -539,6 +539,9 @@ Chang, W., Cheng, J., Allaire, J., Sievert, C., Schloerke, B., Xie, Y., Allen, J
 \leavevmode\vadjust pre{\hypertarget{ref-duboisPhiladelphiaNegroSocial1899}{}}%
 Du Bois, W. E. B. (1899). \emph{The {Philadelphia Negro}: {A} social study}. Published for the University.
 
+\leavevmode\vadjust pre{\hypertarget{ref-easterlyAfricaGrowthTragedy1997}{}}%
+Easterly, W., \& Levine, R. (1997). Africa's {Growth Tragedy}: {Policies} and {Ethnic Divisions}*. \emph{The Quarterly Journal of Economics}, \emph{112}(4), 1203--1250. \url{https://doi.org/10.1162/003355300555466}
+
 \leavevmode\vadjust pre{\hypertarget{ref-ellemanSmallerBetterAssociations2020}{}}%
 Elleman, L. G., Condon, D. M., Holtzman, N. S., Allen, V. R., \& Revelle, W. (2020). Smaller {Is Better}: {Associations Between Personality} and {Demographics Are Improved} by {Examining Narrower Traits} and {Regions}. \emph{Collabra: Psychology}, \emph{6}(1), 17210. \url{https://doi.org/10.1525/collabra.17210}
 
@@ -554,6 +557,9 @@ Enos, R. D. (2016). What the {Demolition} of {Public Housing Teaches Us} about t
 \leavevmode\vadjust pre{\hypertarget{ref-florezUnderstandingMeaningRacial2019a}{}}%
 Florez, I. A., Schulenberg, S. E., Lair, E. C., Wilson, K. G., \& Johnson, K. A. (2019). Understanding meaning and racial prejudice: {Examining} self-transcendence and psychological inflexibility in a sample of {White} college students. \emph{Journal of Contextual Behavioral Science}, \emph{12}, 1--6. \url{https://doi.org/10.1016/j.jcbs.2018.11.007}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-mvtnorm}{}}%
+Genz, A., \& Bretz, F. (2009). \emph{Computation of multivariate normal and t probabilities}. Springer-Verlag.
+
 \leavevmode\vadjust pre{\hypertarget{ref-gilesPowerApproachIntergroup1986}{}}%
 Giles, M. W., \& Evans, A. (1986). The {Power Approach} to {Intergroup Hostility}. \emph{Journal of Conflict Resolution}, \emph{30}(3), 469--486. \url{https://doi.org/10.1177/0022002786030003004}
 
@@ -566,20 +572,47 @@ Herbert Blumer. (1958). Race {Prejudice} as a {Sense} of {Group Position}. \emph
 \leavevmode\vadjust pre{\hypertarget{ref-R-stargazer}{}}%
 Hlavac, M. (2022). \emph{Stargazer: Well-formatted regression and summary statistics tables}. Social Policy Institute. \url{https://CRAN.R-project.org/package=stargazer}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-mediation_c}{}}%
+Imai, K., Keele, L., \& Tingley, D. (2010). A general approach to causal mediation analysis. \emph{Psychological Methods}, \emph{15}(4), 309--334. \url{http://imai.princeton.edu/research/BaronKenny.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-mediation_d}{}}%
+Imai, K., Keele, L., Tingley, D., \& Yamamoto, T. (2011). Unpacking the black box of causality: Learning about causal mechanisms from experimental and observational studies. \emph{American Political Science Review}, \emph{105}(4), 765--789. \url{http://imai.princeton.edu/research/mediationP.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-mediation_b}{}}%
+Imai, K., Keele, L., \& Yamamoto, T. (2010). Identification, inference, and sensitivity analysis for causal mediation effects. \emph{Statistical Science}, \emph{25}(1), 51--71. \url{http://imai.princeton.edu/research/mediation.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-mediation_e}{}}%
+Imai, K., \& Yamamoto, T. (2013). Identification and sensitivity analysis for multiple causal mechanisms: Revisiting evidence from framing experiments. \emph{Political Analysis}, \emph{21}(2), 141--171. \url{http://imai.princeton.edu/research/medsens.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-ggformula}{}}%
+Kaplan, D., \& Pruim, R. (2023). \emph{Ggformula: Formula interface to the grammar of graphics}. \url{https://CRAN.R-project.org/package=ggformula}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-jtools}{}}%
 Long, J. A. (2022). \emph{Jtools: Analysis and presentation of social scientific data}. \url{https://cran.r-project.org/package=jtools}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-Require}{}}%
 McIntire, E. J. B. (2023). \emph{Require: Installing and loading r packages for reproducible workflows}. \url{https://CRAN.R-project.org/package=Require}
 
+\leavevmode\vadjust pre{\hypertarget{ref-montalvoChapter18Cultural2014}{}}%
+Montalvo, J. G., \& Reynal-Querol, M. (2014). Chapter 18 - {Cultural Diversity}, {Conflict}, and {Economic Development}. In V. A. Ginsburgh \& D. Throsby (Eds.), \emph{Handbook of the {Economics} of {Art} and {Culture}} (Vol. 2, pp. 485--506). Elsevier. \url{https://doi.org/10.1016/B978-0-444-53776-8.00018-0}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-tibble}{}}%
 Müller, K., \& Wickham, H. (2023). \emph{Tibble: Simple data frames}. \url{https://CRAN.R-project.org/package=tibble}
+
+\leavevmode\vadjust pre{\hypertarget{ref-oishiPsychologicallyRichLife2019}{}}%
+Oishi, S., Choi, H., Buttrick, N., Heintzelman, S. J., Kushlev, K., Westgate, E. C., Tucker, J., Ebersole, C. R., Axt, J., Gilbert, E., Ng, B. W., \& Besser, L. L. (2019). The psychologically rich life questionnaire. \emph{Journal of Research in Personality}, \emph{81}, 257--270. \url{https://doi.org/10.1016/j.jrp.2019.06.010}
 
 \leavevmode\vadjust pre{\hypertarget{ref-oishiExperiencesAssociatedPsychological2021}{}}%
 Oishi, S., Choi, H., Liu, A., \& Kurtz, J. (2021). Experiences associated with psychological richness. \emph{European Journal of Personality}, \emph{35}(5), 754--770. \url{https://doi.org/10.1177/0890207020962334}
 
 \leavevmode\vadjust pre{\hypertarget{ref-oishiPsychologicallyRichLife2022}{}}%
 Oishi, S., \& Westgate, E. c. (2022). A {Psychologically Rich Life}: {Beyond Happiness} and {Meaning}. \emph{Psychological Review}, \emph{129}(4), 790--811. \url{https://doi.org/10.1037/rev0000317}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-mosaic}{}}%
+Pruim, R., Kaplan, D. T., \& Horton, N. J. (2017). The mosaic package: Helping students to 'think with data' using r. \emph{The R Journal}, \emph{9}(1), 77--102. \url{https://journal.r-project.org/archive/2017/RJ-2017-024/index.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-mosaicData}{}}%
+Pruim, R., Kaplan, D., \& Horton, N. (2023). \emph{mosaicData: Project MOSAIC data sets}. \url{https://CRAN.R-project.org/package=mosaicData}
 
 \leavevmode\vadjust pre{\hypertarget{ref-putnamPluribusUnumDiversity2007}{}}%
 Putnam, R. D. (2007). E {Pluribus Unum}: {Diversity} and {Community} in the {Twenty-first Century The} 2006 {Johan Skytte Prize Lecture}. \emph{Scandinavian Political Studies}, \emph{30}(2), 137--174. \url{https://doi.org/10.1111/j.1467-9477.2007.00176.x}
@@ -590,14 +623,32 @@ R Core Team. (2023). \emph{R: A language and environment for statistical computi
 \leavevmode\vadjust pre{\hypertarget{ref-R-broom}{}}%
 Robinson, D., Hayes, A., \& Couch, S. (2023). \emph{Broom: Convert statistical objects into tidy tibbles}. \url{https://CRAN.R-project.org/package=broom}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-lattice}{}}%
+Sarkar, D. (2008). \emph{Lattice: Multivariate data visualization with r}. Springer. \url{http://lmdvr.r-forge.r-project.org}
+
 \leavevmode\vadjust pre{\hypertarget{ref-sederEthnicRacialHomogeneity2009e}{}}%
 Seder, J. P., \& Oishi, S. (2009). Ethnic/{Racial} homogeneity in college students' {Facebook} friendship networks and subjective well-being. \emph{Journal of Research in Personality}, \emph{43}(3), 438--443. \url{https://doi.org/10.1016/j.jrp.2009.01.009}
 
 \leavevmode\vadjust pre{\hypertarget{ref-sigelmanContactHypothesisRevisited1993}{}}%
 Sigelman, L., \& Welch, S. (1993). The contact hypothesis revisited: {Black-white} interaction and positive racial attitudes. \emph{Social Forces}, \emph{71}(3), 781--795. \url{https://doi.org/10.1093/sf/71.3.781}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-diagram}{}}%
+Soetaert, K. (2020). \emph{Diagram: Functions for visualising simple graphs (networks), plotting flow diagrams}. \url{https://CRAN.R-project.org/package=diagram}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-shape}{}}%
+Soetaert, K. (2024). \emph{Shape: Functions for plotting graphical shapes, colors}. \url{https://CRAN.R-project.org/package=shape}
+
 \leavevmode\vadjust pre{\hypertarget{ref-stoufferAmericanSoldierAdjustment1949}{}}%
 Stouffer, S. A., Suchman, E. A., Devinney, L. C., Star, S. A., \& Williams Jr., R. M. (1949). \emph{The {American} soldier: {Adjustment} during army life. ({Studies} in social psychology in {World War II}), {Vol}. 1} (pp. xii, 599). Princeton Univ. Press.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-mediation_a}{}}%
+Tingley, D., Yamamoto, T., Hirose, K., Keele, L., \& Imai, K. (2014). {mediation}: {R} package for causal mediation analysis. \emph{Journal of Statistical Software}, \emph{59}(5), 1--38. \url{http://www.jstatsoft.org/v59/i05/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-CensusBureauQuickFacts}{}}%
+\emph{U.{S}. {Census Bureau QuickFacts}: {United States}}. (n.d.).
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-MASS}{}}%
+Venables, W. N., \& Ripley, B. D. (2002). \emph{Modern applied statistics with s} (Fourth). Springer. \url{https://www.stats.ox.ac.uk/pub/MASS4/}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-ggplot2}{}}%
 Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. \url{https://ggplot2.tidyverse.org}
@@ -632,7 +683,33 @@ William Revelle. (2024). \emph{Psych: Procedures for psychological, psychometric
 \leavevmode\vadjust pre{\hypertarget{ref-R-tinytex}{}}%
 Xie, Y. (2019). TinyTeX: A lightweight, cross-platform, and easy-to-maintain LaTeX distribution based on TeX live. \emph{TUGboat}, \emph{40}(1), 30--32. \url{https://tug.org/TUGboat/Contents/contents40-1.html}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-sandwich_b}{}}%
+Zeileis, A. (2004). Econometric computing with {HC} and {HAC} covariance matrix estimators. \emph{Journal of Statistical Software}, \emph{11}(10), 1--17. \url{https://doi.org/10.18637/jss.v011.i10}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-sandwich_c}{}}%
+Zeileis, A. (2006). Object-oriented computation of sandwich estimators. \emph{Journal of Statistical Software}, \emph{16}(9), 1--16. \url{https://doi.org/10.18637/jss.v016.i09}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-sandwich_a}{}}%
+Zeileis, A., Köll, S., \& Graham, N. (2020). Various versatile variances: An object-oriented implementation of clustered covariances in {R}. \emph{Journal of Statistical Software}, \emph{95}(1), 1--36. \url{https://doi.org/10.18637/jss.v095.i01}
+
 \end{CSLReferences}
+
+\newpage
+
+\hypertarget{Supplemental-Materials}{%
+\section{Supplemental Materials}\label{Supplemental-Materials}}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1} \caption{Scatterplot demonstrating relationship the relationship between racial homogeneity in a Participant's ZIP Code and the participant's meaning in life scores.}\label{fig:happy-appendix}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1} \caption{Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's meaning in life scores.}\label{fig:meaning-appendix}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{Richness-Diversity-Markdown_files/figure-latex/f-path-box-1} \caption{Box plot comparing the relationships between the region particpants were from and their psychological richness scores.}\label{fig:box-appendix}
+\end{figure}
 
 
 \end{document}
