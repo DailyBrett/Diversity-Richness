@@ -1,0 +1,45 @@
+
+\begin{table}[!htbp] \centering 
+  \caption{Psych Richness ZIP Controls Regression} 
+  \label{tab:rich-control-regression2} 
+\tiny 
+\begin{tabular}{@{\extracolsep{1pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{Psych Richness} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ ZIP Code Percent White & $-$0.006$^{**}$ & $-$0.005$^{**}$ & $-$0.007$^{**}$ \\ 
+  & (0.002) & (0.002) & (0.003) \\ 
+  & & & \\ 
+ Percent Female &  & 0.038$^{**}$ & 0.041$^{**}$ \\ 
+  &  & (0.018) & (0.018) \\ 
+  & & & \\ 
+ Median Household Income &  &  & 0.00000 \\ 
+  &  &  & (0.00000) \\ 
+  & & & \\ 
+ Population Density &  &  & 0.00000 \\ 
+  &  &  & (0.00000) \\ 
+  & & & \\ 
+ Total Population &  &  & $-$0.00000 \\ 
+  &  &  & (0.00000) \\ 
+  & & & \\ 
+ Mobility Score &  &  & 2.842 \\ 
+  &  &  & (2.234) \\ 
+  & & & \\ 
+ Constant & 5.742$^{***}$ & 3.810$^{***}$ & 3.279$^{***}$ \\ 
+  & (0.140) & (0.930) & (1.008) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 2,889 & 2,889 & 2,889 \\ 
+R$^{2}$ & 0.002 & 0.003 & 0.004 \\ 
+Adjusted R$^{2}$ & 0.002 & 0.003 & 0.002 \\ 
+Residual Std. Error & 2.611 (df = 2887) & 2.609 (df = 2886) & 2.610 (df = 2882) \\ 
+F Statistic & 5.400$^{**}$ (df = 1; 2887) & 4.909$^{***}$ (df = 2; 2886) & 2.087$^{*}$ (df = 6; 2882) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

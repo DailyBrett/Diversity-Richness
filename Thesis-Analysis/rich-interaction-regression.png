@@ -1,0 +1,42 @@
+
+\begin{table}[!htbp] \centering 
+  \caption{Psych Richness Interaction Regression} 
+  \label{tab:rich-interaction-regression} 
+\tiny 
+\begin{tabular}{@{\extracolsep{1pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Richness-Walkability Interaction} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ ZIP Code Percent White & $-$0.002 & $-$0.008$^{*}$ \\ 
+  & (0.005) & (0.005) \\ 
+  & & \\ 
+ Walkscore & 0.563 &  \\ 
+  & (0.488) &  \\ 
+  & & \\ 
+ Whiteness:Walkscore & $-$0.007 &  \\ 
+  & (0.008) &  \\ 
+  & & \\ 
+ Segregation &  & $-$0.669 \\ 
+  &  & (0.773) \\ 
+  & & \\ 
+ Segregation:Walkscore &  & 0.006 \\ 
+  &  & (0.014) \\ 
+  & & \\ 
+ Constant & 5.464$^{***}$ & 5.965$^{***}$ \\ 
+  & (0.280) & (0.275) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 2,889 & 2,889 \\ 
+R$^{2}$ & 0.002 & 0.002 \\ 
+Adjusted R$^{2}$ & 0.001 & 0.001 \\ 
+Residual Std. Error (df = 2885) & 2.611 & 2.611 \\ 
+F Statistic (df = 3; 2885) & 2.357$^{*}$ & 2.254$^{*}$ \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

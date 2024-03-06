@@ -70,6 +70,7 @@ library(broom)
 library(ggplot2)
 library(readr)
 library(tinytex)
+library(citr)
 Require("jtools")
 r_refs("thesis-r-references.bib")
 ```
