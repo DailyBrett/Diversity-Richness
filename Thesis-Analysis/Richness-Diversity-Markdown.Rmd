@@ -244,7 +244,7 @@ meaning_model1_tidy <- tidy(meaning_model1)
 ```
 
 
-```{r compare-wellbeing-regression, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
+```{r compare-wellbeing-regression, echo=FALSE, fig.pos='H', results='asis', out.width='100%', warning=FALSE}
 
 stargazer(psych_rich_model1, happiness_model1, meaning_model1, title = "Well-being Measures Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Happiness", "Meaning"), covariate.labels = c("ZIP Code Percent White"), column.sep.width = "1pt", font.size = "tiny", label = "tab:compare-wellbeing-regression", out="compare-wellbeing-regression.png")
 
@@ -301,13 +301,13 @@ psych_rich_model7 <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Tota
 psych_rich_model7_tidy <- tidy(psych_rich_model7)
 ```
 
-```{r rich-control-regression, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
+```{r rich-control-regression, echo=FALSE, fig.pos='H', results='asis', out.width='100%', warning=FALSE}
 stargazer(psych_rich_model1, psych_rich_model2, title = "Psych Richness Region Controls Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Region Controls"), covariate.labels = c("ZIP Code Percent White", "Central Interior", "Central South", "Great Lakes", "Lower North East", "North East", "Northern Midwest", "South East", "West Coast", "West Interior"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-control-regression", out="rich-control-regression.png")
 
 
 ```
 
-```{r rich-control-regression2, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
+```{r rich-control-regression2, echo=FALSE, fig.pos='H', results='asis', out.width='100%', warning=FALSE}
 stargazer(psych_rich_model1, psych_rich_model3, psych_rich_model7, title = "Psych Richness ZIP Controls Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Gender Control", "ZIP Code Controls"), covariate.labels = c("ZIP Code Percent White", "Percent Female", "Median Household Income", "Population Density", "Total Population", "Mobility Score"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-control-regression2", out="rich-control-regression2.png")
 
 ```
@@ -330,7 +330,7 @@ ggplot(Zip_Richness_Diversity_short_zone) +
 
 While the relationship between psychological richness and racial homogeneity continued to hold after controlling for a variety of factors, it still remained possible that possible that the relationship between the two might be especially significant in certain circumstances. For example, one might imagine that racial diversity might have a particularly large effect if the community is more racially integrated or if the community is especially walkable as it would provide more opportunites for interaction. Figure\ \@ref(fig:g-path-smooth) seems to suggest that their might be such as interaction effect between racial integration and racial homogeneity as the integrated communities show a stronger correlation. 
 
-```{r rich-interaction-models, fig.pos='H', warning=FALSE}
+```{r rich-interaction-models, fig.pos='H', out.width='100%', warning=FALSE}
 psych_walkscore_interaction <- lm(data = Zip_Richness_Diversity_reduced, PRLQ ~ ZIP_X_Total_Population_White_Alone*walkscore_walkscore)
 psych_walkscore_interaction_tidy <- tidy(psych_walkscore_interaction)
 
@@ -340,7 +340,7 @@ psych_segregation_interaction <- lm(data = Zip_Richness_Diversity_reduced, PRLQ 
 psych_segregation_interaction_tidy <- tidy(psych_segregation_interaction)
 ```
 
-```{r rich-interaction-regression, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
+```{r rich-interaction-regression, echo=FALSE, fig.pos='H', results='asis', out.width='100%', warning=FALSE}
 stargazer(psych_walkscore_interaction, psych_segregation_interaction, title = "Psych Richness Interaction Regression", header = FALSE, type = 'latex', dep.var.labels = c("Richness-Walkability Interaction", "Richness-Segregation Interaction"), covariate.labels = c("ZIP Code Percent White", "Walkscore", "Whiteness:Walkscore", "Segregation", "Segregation:Walkscore"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-interaction-regression", out="rich-interaction-regression.png")
 ```
 
