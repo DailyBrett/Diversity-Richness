@@ -3,8 +3,6 @@
 /localonly/
 # include a dedicated directory called localonly
 
-*.bib
-# ignore .bib type files
 
 /Editting Data.Rmd
 # specifcally ignore the Editting Data.Rmd file
