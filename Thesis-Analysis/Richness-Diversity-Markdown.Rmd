@@ -26,7 +26,7 @@ abstract: |
 
 keywords          : "Diversity, Well-Being, Happiness, Psychological Richness, Socio-ecological Psychology"
 
-bibliography      : "new-r-references.bib"
+bibliography      : "thesis-r-references.bib"
 
 floatsintext      : yes
 figurelist        : no
@@ -71,7 +71,7 @@ library(ggplot2)
 library(readr)
 library(tinytex)
 Require("jtools")
-r_refs("new-r-references.bib")
+r_refs("thesis-r-references.bib")
 ```
 
 ```{r analysis-preferences}
@@ -82,7 +82,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 
 ```{r loading_data, warning=FALSE}
 
-Zip_Richness_Diversity <- read_csv("~/repos/Diversity-Richness/Thesis-Analysis/Edited_Richness_ZIP_Mockdata.csv")
+Zip_Richness_Diversity <- read_csv("Edited_Richness_ZIP_Mockdata.csv")
 
 ```
 
@@ -138,7 +138,7 @@ These scores will then need to be compared to a measure of the independent varia
 
 This study will be utilizing the data provided by the U.S. Census Bureau on ZIP Code racial demographics in the  “American Community Survey ACS 2017-2021 (5-Year Estimates)”, as it provides some of the largest, most accurate, and most wide-used data on racial composition across the US [@CensusBureauQuickFacts]. This US Census Bureau data on the population sizes of different racial groups in each ZIP Code will then by quantified using a measure similar to the “ethnolinguistic fractionalization” formula employed by many scholars on diversity, which measures the percent chance that two people of different races would be selected if randomly pulled from the ZIP Code’s population [@easterlyAfricaGrowthTragedy1997; @montalvoChapter18Cultural2014]. We then used a variety of `R` packages[^1] to organize our data and run our analyses. 
 
-[^1]: `r cite_r("new-r-references.bib")`
+[^1]: `r cite_r("thesis-r-references.bib")`
 
 # Results
 (ref:a-path-caption) Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's psychological richness scores.
@@ -309,6 +309,7 @@ stargazer(psych_rich_model1, psych_rich_model2, title = "Psych Richness Region C
 
 ```{r rich-control-regression2, echo=FALSE, fig.pos='H', results='asis', warning=FALSE}
 stargazer(psych_rich_model1, psych_rich_model3, psych_rich_model7, title = "Psych Richness ZIP Controls Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Gender Control", "ZIP Code Controls"), covariate.labels = c("ZIP Code Percent White", "Percent Female", "Median Household Income", "Population Density", "Total Population", "Mobility Score"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-control-regression2", out="rich-control-regression2.png")
+
 ```
 
 Therefore, we ran regression models with a variety of potentially compounding variables. As demonstrated in Table\ \@ref(tab:rich-control-regression), after controlling based on region we found no significant relationships besides of ZIP Code Percent White ($p$ `r apa_p(psych_rich_model2_tidy$p.value[2], add_equals = T)`). Additionally, after controlling for a variety of other potentially confounding variables (as demonstrated in Table\ \@ref(tab:rich-control-regression2)), the only other variable with a signifcant relationship was gender ($p$ `r apa_p(psych_rich_model7_tidy$p.value[3], add_equals = T)`).
@@ -363,15 +364,15 @@ Despite these limitations, however, *Study 1* does provide several important con
 # Supplemental Materials {#Supplemental-Materials}
 
 ```{r happy-appendix, echo=FALSE, out.width="70%", fig.cap="(ref:b-path-caption)", fig.pos="H"}
-knitr::include_graphics("~/repos/Diversity-Richness/Thesis-Analysis/Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.png")
+knitr::include_graphics("Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.png")
 ```
 
 ```{r meaning-appendix, echo=FALSE, out.width="70%", fig.cap="(ref:c-path-caption)", fig.pos="H"}
-knitr::include_graphics("~/repos/Diversity-Richness/Thesis-Analysis/Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.png")
+knitr::include_graphics("Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.png")
 ```
 
 ```{r box-appendix, echo=FALSE, out.width="70%", fig.cap="(ref:f-path-caption)", fig.pos="H"}
-knitr::include_graphics("~/repos/Diversity-Richness/Thesis-Analysis/Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.png")
+knitr::include_graphics("Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.png")
 ```
 
 
