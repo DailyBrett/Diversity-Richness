@@ -137,9 +137,10 @@ These scores will then need to be compared to a measure of the independent varia
 
 ## Data analysis
 
-This study will be utilizing the data provided by the U.S. Census Bureau on ZIP Code racial demographics in the  “American Community Survey ACS 2017-2021 (5-Year Estimates)”, as it provides some of the largest, most accurate, and most wide-used data on racial composition across the US [@CensusBureauQuickFacts]. This US Census Bureau data on the population sizes of different racial groups in each ZIP Code will then by quantified using a measure similar to the “ethnolinguistic fractionalization” formula employed by many scholars on diversity, which measures the percent chance that two people of different races would be selected if randomly pulled from the ZIP Code’s population [@easterlyAfricaGrowthTragedy1997; @montalvoChapter18Cultural2014]. We then used a variety of `R` packages[^1] to organize our data and run our analyses. 
+This study will be utilizing the data provided by the U.S. Census Bureau on ZIP Code racial demographics in the  “American Community Survey ACS 2017-2021 (5-Year Estimates)”, as it provides some of the largest, most accurate, and most wide-used data on racial composition across the US [@CensusBureauQuickFacts]. This US Census Bureau data on the population sizes of different racial groups in each ZIP Code will then by quantified using a measure similar to the “ethnolinguistic fractionalization” formula employed by many scholars on diversity, which measures the percent chance that two people of different races would be selected if randomly pulled from the ZIP Code’s population [@easterlyAfricaGrowthTragedy1997; @montalvoChapter18Cultural2014].  
 
-[^1]: `r cite_r("thesis-r-references.bib")`
+We used `r cite_r("thesis-r-references.bib")` for all our analyses.
+ 
 
 # Results
 (ref:a-path-caption) Scatterplot demonstrating the relationship between the racial homogeneity in a Participant's ZIP Code and the participant's psychological richness scores.
@@ -247,7 +248,7 @@ meaning_model1_tidy <- tidy(meaning_model1)
 
 ```{r compare-wellbeing-regression, echo=FALSE, fig.pos='H', results='asis', out.width='100%', warning=FALSE}
 
-stargazer(psych_rich_model1, happiness_model1, meaning_model1, title = "Well-being Measures Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Happiness", "Meaning"), covariate.labels = c("ZIP Code Percent White"), column.sep.width = "1pt", font.size = "tiny", label = "tab:compare-wellbeing-regression", out="compare-wellbeing-regression.png")
+stargazer(psych_rich_model1, happiness_model1, meaning_model1, title = "Well-being Measures Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Happiness", "Meaning"), covariate.labels = c("ZIP Code Percent White"), column.sep.width = "1pt", label = "tab:compare-wellbeing-regression", out="compare-wellbeing-regression.png")
 
 ```
 
@@ -304,8 +305,6 @@ psych_rich_model7_tidy <- tidy(psych_rich_model7)
 
 ```{r rich-control-regression, echo=FALSE, fig.pos='H', results='asis', out.width='100%', warning=FALSE}
 stargazer(psych_rich_model1, psych_rich_model2, title = "Psych Richness Region Controls Regression", header = FALSE, type = 'latex', dep.var.labels = c("Psych Richness", "Region Controls"), covariate.labels = c("ZIP Code Percent White", "Central Interior", "Central South", "Great Lakes", "Lower North East", "North East", "Northern Midwest", "South East", "West Coast", "West Interior"), column.sep.width = "1pt", font.size = "tiny", label = "tab:rich-control-regression", out="rich-control-regression.png")
-
-
 ```
 
 ```{r rich-control-regression2, echo=FALSE, fig.pos='H', results='asis', out.width='100%', warning=FALSE}
@@ -348,10 +347,13 @@ stargazer(psych_walkscore_interaction, psych_segregation_interaction, title = "P
 Therefore, we ran regression analyses on the interaction between ZIP Code Percent White and walk score as well as the interaction between ZIP Code Percent White and segregation score. As Table\ \@ref(tab:rich-interaction-regression) demonstrates, neither of the interaction terms had significant effect, and the only variable that carried significance was once again ZIP Code Percent White ($p$ `r apa_p(psych_segregation_interaction_tidy$p.value[2], add_equals = T)`). The significant interaction Figure\ \@ref(fig:g-path-smooth) seemed to suggest was actually the results of there being a very small number of cities in this study falling under the "Integrated" category (only `r length(Zip_Richness_Diversity$Segregation_Category["Integrated"])`), as there are relatively few large racially integrated cities in the US. Therefore, further research should be done that includes more racially integrated cites to verify if the interaction is significant or not. However, there are relatively few large racially integrated cities in the United States, so such work may be difficult in the US context. 
 
 # Discussion
+
+*Study 1* does provide several important contributions to understanding this relationship between diversity and psychological richness, including how diversity functions in communities (at the ZIP Code level) and how potential effects on happiness and psychological richness might compare to each other. By demonstrating a inverse relationship between ZIP Code-level racial homogeneity and psychological richness, *Study 1* provided initial support for *H!* that greater communal racial diversity is correlated with higher individual psychological richness. Additionally, by demonstrating positive relationship between racial homogeneity and both happiness and meaning, this study both reaffirmed previous studies in this area and also demonstrated that psychological richness relates to communal diversity differently than the other two measures of well-being. In this manner, this research also provides the potential impetus for further study on diversity and overall well-being by addressing whether past studies possibly produced an overly negative portrayal of diversity by not also including psychological richness as a measure of well-being [^1].
+
 *Study 1* also has several limitations though based on sample size and scale of community addressed. First, while 30 participants per city is a sufficiently large sample size, the strength of this sample may be slightly weakened when broken down on the ZIP Code level. Therefore, confirming any potential findings using a large-scale, frequently conducted values survey would be valuable for strengthening any claims about the relationship between diversity and richness. Additionally, while smaller than cities or states,  ZIP Codes are still quite large geographic areas for measuring a community affect since people are most directly shaped by their immediate surroundings. In this manner, even if a correlation between the diversity scores and the psychological richness scores is discovered, it would be unclear whether a potential effect was caused by broader community influences, interactions within one’s social network, or engaging in certain enriching activities that may be more common in diverse communities. Therefore, to address these limitations and more fully explore the relationship between diversity and richness, it is also important to test richness in a smaller-scale social network where there can be more confidence the participants are actually interacting with the diversity within their community.
 
-Despite these limitations, however, *Study 1* does provide several important contributions to understanding this relationship between diversity and psychological richness, including how diversity functions in communities (at the ZIP COde level) and how potential effects on happiness and psychological richness might compare to each other. In this manner, this research also provides the potential impetus for further study on diversity and overall well-being by addressing whether past studies possibly produced an overly negative portrayal of diversity by not also including psychological richness as a measure of well-being.
 
+[^1]: Since this analysis is based on mock data, it is simply specualtive and will need to be updated.
 
 \newpage
 
@@ -364,15 +366,15 @@ Despite these limitations, however, *Study 1* does provide several important con
 
 # Supplemental Materials {#Supplemental-Materials}
 
-```{r happy-appendix, echo=FALSE, out.width="70%", fig.cap="(ref:b-path-caption)", fig.pos="H"}
+```{r happy-appendix, echo=FALSE, out.width="100%", fig.cap="(ref:b-path-caption)", fig.pos="H"}
 knitr::include_graphics("Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.png")
 ```
 
-```{r meaning-appendix, echo=FALSE, out.width="70%", fig.cap="(ref:c-path-caption)", fig.pos="H"}
+```{r meaning-appendix, echo=FALSE, out.width="100%", fig.cap="(ref:c-path-caption)", fig.pos="H"}
 knitr::include_graphics("Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.png")
 ```
 
-```{r box-appendix, echo=FALSE, out.width="70%", fig.cap="(ref:f-path-caption)", fig.pos="H"}
+```{r box-appendix, echo=FALSE, out.width="100%", fig.cap="(ref:f-path-caption)", fig.pos="H"}
 knitr::include_graphics("Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.png")
 ```
 

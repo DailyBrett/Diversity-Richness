@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.26)  5 MAR 2024 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.26)  5 MAR 2024 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -849,90 +849,88 @@ Underfull \vbox (badness 3965) has occurred while \output is active []
 [5]
 Underfull \vbox (badness 3965) has occurred while \output is active []
 
-[6] [7]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 278.
-(/Users/BrettPeterson/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 278.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 278.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 278.
-[8]
-<Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf, id=117, 469.755pt x 325.215pt>
+[6] [7] [8]
+<Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf, id=116, 469.755pt x 325.215pt>
 File: Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf Graphic file (type pdf)
 <use Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf>
-Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf  used on input line 286.
+Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf  used on input line 288.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [9]
-<Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf, id=130, 469.755pt x 325.215pt>
+<Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf, id=124, 469.755pt x 325.215pt>
 File: Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf Graphic file (type pdf)
 <use Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf>
-Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf  used on input line 298.
+Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf  used on input line 300.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 Underfull \vbox (badness 2653) has occurred while \output is active []
 
-[10{/Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf>] [11 <./Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf>]
-<Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf, id=169, 469.755pt x 325.215pt>
+[10{/Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./Richness-Diversity-Markdown_files/figure-latex/a-path-scatterplot-1.pdf>] [11 <./Richness-Diversity-Markdown_files/figure-latex/d-path-smooth-1.pdf>] [12{/Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+<Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf, id=171, 469.755pt x 325.215pt>
 File: Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf Graphic file (type pdf)
 <use Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf>
-Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf  used on input line 338.
+Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf  used on input line 339.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `fig:f-path-smooth' on page 13 undefined on input line 344.
 
-[12{/Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-
-LaTeX Warning: Reference `fig:f-path-smooth' on page 13 undefined on input line 343.
-
-[13 <./Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf>] [14]
-<Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf, id=205, 469.755pt x 325.215pt>
+[13 <./Richness-Diversity-Markdown_files/figure-latex/e-path-smooth-1.pdf>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 350.
+<Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf, id=190, 469.755pt x 325.215pt>
 File: Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf Graphic file (type pdf)
 <use Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf>
-Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf  used on input line 452.
+Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf  used on input line 453.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
+[14 <./Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf>] [15] [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[15] [16 <./Richness-Diversity-Markdown_files/figure-latex/g-path-smooth-1.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[17] [18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[19]
+[17]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 505.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 505.
+[18] [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[21] [22]
-<Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf, id=335, 469.755pt x 325.215pt>
+[21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[24] [25]
+<Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf, id=383, 469.755pt x 325.215pt>
 File: Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf Graphic file (type pdf)
 <use Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf>
-Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf  used on input line 649.
-(pdftex.def)             Requested size: 328.82626pt x 227.64894pt.
-<Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf, id=336, 469.755pt x 325.215pt>
+Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf  used on input line 701.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf, id=384, 469.755pt x 325.215pt>
 File: Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf Graphic file (type pdf)
 <use Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf>
-Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf  used on input line 653.
-(pdftex.def)             Requested size: 328.82626pt x 227.64894pt.
+Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf  used on input line 705.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23 <./Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf>]
-<Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf, id=353, 469.755pt x 325.215pt>
+[26 <./Richness-Diversity-Markdown_files/figure-latex/b-path-scatterplot-1.pdf>]
+<Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf, id=401, 469.755pt x 325.215pt>
 File: Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf Graphic file (type pdf)
 <use Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf>
-Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf  used on input line 657.
-(pdftex.def)             Requested size: 328.82626pt x 227.64894pt.
-AED endfloat: Processing end Figures and Tables [24 <./Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf> <./Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf>] (./Richness-Diversity-Markdown.aux)
+Package pdftex.def Info: Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf  used on input line 709.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[27 <./Richness-Diversity-Markdown_files/figure-latex/c-path-scatterplot-1.pdf>] AED endfloat: Processing end Figures and Tables [28 <./Richness-Diversity-Markdown_files/figure-latex/f-path-box-1.pdf>] (./Richness-Diversity-Markdown.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -944,18 +942,18 @@ Package rerunfilecheck Info: File `Richness-Diversity-Markdown.out' has not chan
 (rerunfilecheck)             Checksum: B0EC41327E064D6B48EF7EABB892C58F;1959.
  ) 
 Here is how much of TeX's memory you used:
- 26280 strings out of 476097
- 495083 string characters out of 5792317
- 1948187 words of memory out of 5000000
- 47750 multiletter control sequences out of 15000+600000
- 637017 words of font info for 102 fonts, out of 8000000 for 9000
+ 26255 strings out of 476097
+ 494602 string characters out of 5792317
+ 1949187 words of memory out of 5000000
+ 47709 multiletter control sequences out of 15000+600000
+ 632436 words of font info for 100 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,12n,107p,2157b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Richness-Diversity-Markdown.pdf (24 pages, 921641 bytes).
+ 99i,11n,107p,2014b,548s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></Users/BrettPeterson/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on Richness-Diversity-Markdown.pdf (28 pages, 901678 bytes).
 PDF statistics:
- 469 PDF objects out of 1000 (max. 8388607)
- 395 compressed objects within 4 object streams
- 111 named destinations out of 1000 (max. 500000)
+ 526 PDF objects out of 1000 (max. 8388607)
+ 446 compressed objects within 5 object streams
+ 132 named destinations out of 1000 (max. 500000)
  160 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,7 +2,6 @@
 \begin{table}[!htbp] \centering 
   \caption{Well-being Measures Regression} 
   \label{tab:compare-wellbeing-regression} 
-\tiny 
 \begin{tabular}{@{\extracolsep{1pt}}lccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
