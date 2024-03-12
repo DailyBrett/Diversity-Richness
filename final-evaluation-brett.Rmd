@@ -1,0 +1,264 @@
+---
+title: "final-evaluation-brett"
+output: html_document
+date: "2024-03-08"
+---
+
+# Assignment Info
+
+- **Student name:** Brett Peterson
+- **Project title:** A Diverse Well-Being for a Diversifing World: The Relationship between Community-level Racial Diversity and Psycholoigcal Richness
+- **Submission date:** Mar 5 at 11:21pm
+
+## Report plan summary
+
+Report Plan
+
++ Plan 1: Skelton Table Analysis
++ Data: Skelton Chart and Census Data
++ As previously discussed with Dr. Dowling, I was having some trouble getting access to the data from my lab since my inclusion into the IRB was delayed. Therefore, my lab manager sent me a skeleton version of the data which included all the relevant zip codes and some public, non-confidential information. 
++ I will use this skeleton data to run a mock version of my data analysis by filling out the data with mock numbers. 
++ Analysis: Diversity on Psych Richness
++ I will be analyzing the relationship between ZIP code level racial diversity and participants’ scores of psychological richness (a well-being measure) 
++ I will run a model on the relationship between the two including multiple potential compounds (income, region, etc.) and a couple potential interaction affects (walkability, racial integration)
++ Include a linear model table
++ Include a smooth graph on the relationship
++ Potential Boxplot chart based on zip code or city area
++ Text: 
++ Already written a lengthy literature review for my thesis process which will take up most of the 1500 words
++ I have a mostly finished version of my methods as well.
++ Since I am using a skeleton table for my data, I will not provide a completed data analysis/results/discussion. But will instead include small sections on what results I expect to find. 
++ Chunks
++ Referenced chunks will include: rounded means of the relevant scores, a p score for my model, and the results of the interaction vs regular effects
++ Goals  
++ Since I have not yet received the IRB approval from my lab as I was hoping for, I had to slightly change the goals I have for this assignment. Instead of fully running a model to actually address the relationship between diversity and richness already, I will instead focusing on learning how to run such an analysis in R and how to format such a manuscript in R. In this assignment, therefore, I will aim to produce a complete analysis (with the sufficient charts, tables, and discussion sections) so that I can just plug in my data as soon as I fully get access to it.  
++ Plan 2: Previously Used Data
++ Data: Current Census Data
++ Also as previous discussed with Dr. Dowling, if for some reason the skeleton table does not work for the purpose of this assignment, I will instead run analysis using the variables I already have access to through the publicly available Census Data I have been using for this course. 
++ Analysis: Diversity on Median Household Income
++ In this backup scenario, I will likely do analysis on the relationship between diversity and region on Median Household Income (as I have been doing so far up to this point in the course. 
++ Include a linear model table
++ Include a smooth graph on the relationship
++ Potential Box chart based on zip code or city area
++ Text: 
++ In this scenario, I would likely need to write a new mock literature review to reflect the research question I would be addressing. 
++ I could likely include much of the same research methods section however
++ I would also be able to now mostly write a full analysis and discussion section, since I would have the full data.
++ Chunks
++ Referenced chunks will include: rounded means of the relevant scores, a p score for my model, and the results of the interaction vs regular effects
++ Goals 
++ In this scenario, I would mostly be practicing using the tools I will eventually need for my thesis project and would thus focus on setting up a project that would mirror my future project as closely as possible. 
+
+# Assessment
+
+The lists of expectations in each category are to help you understand the kinds of things I'm looking for as I grade. These **do not** map onto point values. A checked box indicates the expectation was met or exceeded. (This also helps me spot patterns across students to identify ways I can improve the syllabus and lectures for future students.)
+
+Ratings indicate overall success for each category and loosely map onto points. Starting from 20 points, no points are lost for the highest rating, -3 for the lowest, and somewhere in between for the middle ratings. Points lost in that range are dependent on how many issues there are, how much they matter, whether it's technicality vs problem of consequence, whether it's the same core issue that lost you points in a different section, whether exceeding expectations elsewhere compensate for a small issue, whether it's something we talked about in your report plan meeting, etc. 
+
+Additional comments are included below the ratings as needed. Final project and class grades are included at the end of the document.
+
+**WARNING: Grades for this assignment are going to be lower than you expect!** Don't freak out. I use "specs-based grading", which works very differently from the letter-grade-to-percentage conversion you are probably used to. It's more like Harry Potter OWLs -- 19/20 is outstanding, 16-18 exceeds expectations (not a C!), 13-15 meets expectations (not an F!), etc. You're not down to T(roll) until you're in the negatives. Remember this is only 20% of your final grade!
+
+## .Rmd/PDF match
+
+**Expectations:**
+
+- [x] PDF submitted to Canvas is identical to the PDF created when I knit your .Rmd
+- [x] Knitting does not produce any errors or problematic warnings
+
+**Rating:**
+
+- [x] Perfect match
+- [ ] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive error(s), missing PDF, or significant problems
+
+*No additional comments*
+
+## Data read-in, prep, wrangling
+
+**Expectations:**
+
+- [x] Data preparation and wrangling code present (may separate files)
+- [x] Intermediate datasets (if used) are functional and read in successfully
+- [x] Raw or intermediate data read into .Rmd code chunk
+- [x] All code in .R files and .Rmd code chunks is sufficiently commented and comprehensible
+- [x] Additional expectations set in the report plan (if any) are met
+
+**Rating:**
+
+- [x] No noteworthy issues 
+- [ ] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive errors or significant problems
+
+Great! I appreciate the informative comments in your prep file
+
+## Figures, tables, analyses
+
+### Figures
+
+**Expectations:**
+
+- [ ] At least 2 plots are produced in .Rmd chunks (not imported images)
+- [x] Figures are different kinds of plots 
+- [x] Figures follow report plan (may have inconsequential deviations)
+- [x] Figures are publication-quality
+- [x] Figures are sensibly captioned with `fig.cap` chunk option
+- [x] Figures are informative and interpretable
+- [ ] All code in .R files and .Rmd code chunks is sufficiently commented and comprehensible
+- [x] Additional expectations set in the report plan (if any) are met
+
+**Rating:**
+
+- [ ] No noteworthy issues 
+- [x] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive errors or significant problems
+
+Your plots look great! The only minor problem re the assignment requirements is that the only plot that is not a scatter/smooth plot (the boxplot) is imported as an image rather than generated in the Rmd. That said, you obviously did generate it in ggplot at some point!
+
+### Table
+
+**Expectations:** 
+
+If you included more than the one required table, only one needs to meet expectations.
+
+- [x] At least 1 table is produced in .Rmd chunk
+- [x] Table follows report plan (may have inconsequential deviations)
+- [x] Table is publication-quality
+- [x] Table is sensibly captioned within the function (e.g., the kable caption argument)
+- [x] Table is informative and interpretable
+- [ ] All code in .R files and .Rmd code chunks is sufficiently commented and comprehensible
+- [x] Additional expectations set in the report plan (if any) are met
+
+**Rating:**
+
+- [x] No noteworthy issues 
+- [ ] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive errors or significant problems
+
+Beautiful! I think I'll likely be looking at your code for examples when I eventually learn the stargazer package.
+
+### Analysis
+
+**Expectations:**
+
+If you included more than the one required analysis (or other requirements agreed on in the report plan), only one needs to meet expectations.
+
+- [x] At least 1 statistical analysis is executed in .Rmd chunk (or sourced code if appropriate)
+- [x] Analysis follows report plan (may have inconsequential deviations)
+- [x] Analysis is executed correctly
+- [x] Analysis is appropriate (not necessarily ideal) for data type(s) and research questions
+- [x] Analysis is referenced and interpreted in narrative text
+- [ ] All code in .R files and .Rmd code chunks is sufficiently commented and comprehensible
+- [x] Additional expectations set in the report plan (if any) are met
+
+**Rating:**
+
+- [x] No noteworthy issues 
+- [ ] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive errors or significant problems
+
+*No additional comments*
+
+## Manuscript
+
+### Narrative text
+
+**Expectations:**
+
+- [x] Narrative text includes 1500+ words distributed across 4 sections
+- [x] Sufficient literature review (per report plan)
+- [x] Sufficient methods section (per report plan)
+- [x] Sufficient results section (per report plan)
+- [x] Sufficient discussion (per report plan)
+- [x] Narrative provides sufficient context and interpretation for all figures, tables, and analyses
+- [x] Additional expectations set in the report plan (if any) are met
+
+**Rating:**
+
+- [x] No noteworthy issues 
+- [ ] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive errors or significant problems
+
+*No additional comments*
+
+### Markdown
+
+**Expectations:**
+
+- [x] Figures and tables are successfully referenced with markdown syntax
+- [x] At least 2 in-text code references
+- [x] At least 1 in-text code reference includes in-text function
+- [x] R Markdown is used effectively to follow APA format (e.g., headings, emphasized text)
+- [x] YAML header is functional and complete
+- [x] Additional expectations set in the report plan (if any) are met
+
+**Rating:**
+
+- [x] No noteworthy issues 
+- [ ] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive errors or significant problems
+
+Unofficial gold star for APA 7 formatting :)
+
+### BibTeX
+
+**Expectations:**
+
+- [x] At least 10 in-text citations using BibTeX reference syntax
+- [x] In-text citations are rendered without errors
+- [x] In-text citations have no obvious problems (e.g., incorrect special characters)
+- [x] R and R packages are cited in-text using `cite_r()`
+- [x] References page renders without errors
+- [x] References page is APA formatted and free of obvious problems
+- [x] Additional expectations set in the report plan (if any) are met
+
+**Rating:**
+
+- [x] No noteworthy issues 
+- [ ] At least one minor problem
+- [ ] At least one major problem and/or multiple minor problems
+- [ ] Multiple major problems
+- [ ] Prohibitive errors or significant problems
+
+*No additional comments*
+
+## GitHub & best practices
+
+These expectations will not have an impact on your grade unless there are egregious issues, but I include them to give you feedback on what you can do if you use this workflow going forward.
+
+**Expectations:**
+
+- [x] GitHub repo and contained files are sensibly and informatively named
+- [x] GitHub repo is well-structured and tidy
+- [x] GitHub README.md file is informative
+- [x] Commit messages are informative
+- [x] Style is (relatively) consistent
+- [ ] Comments are frequent and informative
+- [x] Code chunks have informative names, follow 1-chunk-1-thing rule, and are distributed throughout the text
+
+*No additional comments*
+
+## Overall
+
+Fantastic, Brett! Really exceptional work demonstrating the skills you've learned in the class (as well as those you came in with, I'm sure). Especially impressive given that you're working with mock data. It has been an absolute pleasure having you in class. :)
+
+# Grade
+
+- **Final report grade:** 19
+- **Class participation grade:** 20
+- **Weekly assignments:** 20 (of 20) x3 = 60
+- **TOTAL Final course grade:** 99 (A)
